@@ -67,7 +67,7 @@
 
 </div>
 <font color="white">
-<label>Película: ñ.ñ </label><label> Boruto The movie</label><br>
+<label>Película: </label><label> Boruto The movie</label><br>
 <label>Duración: </label><label> 96 min</label><br>
 <label>Género: </label><label> Acción y aventura</label><br>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
