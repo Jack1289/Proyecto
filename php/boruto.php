@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -67,7 +67,7 @@
 
 </div>
 <font color="white">
-<label>Película: </label><label> Boruto The movie</label><br>
+<label>Película: ñ.ñ </label><label> Boruto The movie</label><br>
 <label>Duración: </label><label> 96 min</label><br>
 <label>Género: </label><label> Acción y aventura</label><br>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
