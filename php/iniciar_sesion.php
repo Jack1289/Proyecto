@@ -17,6 +17,9 @@
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/login.css">
+      
+    <script src="https://use.fontawesome.com/fe55c3cf21.js"></script>
 
   </head>
   <body background="../img/h.jpg">
@@ -31,7 +34,7 @@
 					 
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-					</button> <a class="navbar-brand" href="#">Cinemas Delicias</a>
+					</button> <a class="navbar-brand" href="../index.html">Cinemas Delicias</a>
 				</div>
 				
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -62,12 +65,20 @@
 	</div>
 </div>
     <center>
-	<div class="form-group" style="width: 30%; color: white;" align="center">
-            <label for="usr">Name:</label>
-            <input type="text" class="form-control" id="usr">
-  
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd">
+	<div class="form-group" style="width: 10%; color: white; margin-top: 12%;" align="center">
+	  <form>
+	    
+	    
+            <label for="usuario">Usuario:</label>
+            <input type="text" class="form-control" id="usuario" name="usuario" style="text-align: center; text-transform: uppercase;" maxlength="12" autofocus="true"  />
+	    <br> 
+    
+            <label for="contrasena">Contrase&ntilde;a:</label>
+            <input type="password" class="form-control" id="contrasena" name="contrasena" style="text-align: center;" maxlength="12" />
+	    <br><br>
+	      
+	    <button type="submit" class="btn btn-outline btn-success"><i class="fa fa-sign-in"></i> Ingresar</button>
+	  </form>
         </div>
     </center>
 
