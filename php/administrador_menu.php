@@ -1,3 +1,15 @@
+<?php
+    session_start();
+    if(isset($_SESSION['usuario'])){
+
+    }else{
+    ?>
+    <script type="text/javascript">
+        window.location="iniciar_sesion.php"
+    </script>
+    <?php
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,7 +101,11 @@
 
             <br>
 
-            <button type="submit" class="btn btn-outline btn-success"><i class="fa fa-sign-in"></i> Ingresar</button>
+
+            
+        </form>
+        <form action="cerrar_sesion.php">
+            <input type="submit" value="Cerrar">
         </form>
     </div>
 

@@ -23,7 +23,7 @@
         $_SESSION['usuario']=$sentencia->fields('usuario');
         ?>
         <script type="text/javascript">
-            window.location="boruto.php"
+            window.location="administrador_menu.php"
         </script>
         <?php
     }
