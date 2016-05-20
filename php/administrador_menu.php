@@ -1,15 +1,3 @@
-﻿<?php
-    session_start();
-    if(isset($_SESSION['usuario'])){
-       
-    }else{
-        ?>
-        <script type="text/javascript">
-            window.location="iniciar_sesion.php"
-        </script>
-        <?php
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,11 +15,10 @@
 
 </head>
 <body  background="../img/h.jpg">
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <nav class="navbar navbar-default navbar-inverse" role="navigation">
+            <nav class="navbar navbar-default navbar" role="navigation">
                 <div class="navbar-header">
 
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -65,45 +52,46 @@
     </div>
 </div>
 
-<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/_gBLh7IrAvU" frameborder="0" allowfullscreen></iframe>-->
 
-<div align="center">
-
-
-    <br>
-    <img src="../img/boruto.jpg" width="400px" style="float: left; padding-left: 5%" >
+    <div class="form-group"  style="width: 50%; color: white; margin-left: 5%;" align="center">
+        <form id="cambiarCartelera" name="cambiarCartelera">
 
 
+            <label >Pelìcula:</label>
+            <input type="text" class="form-control" id="nom_pelicula" name="nom_pelicula" style="text-align: center; text-transform: uppercase;" maxlength="30" autofocus="true"  />
+            <br>
+
+            <label >Duración:</label>
+            <input type="text" class="form-control form-inline " id="peli_duracion" name="peli_duracion" style="text-align: center;" maxlength="12" />
+            <br>
+
+            <label>Género:</label>
+            <input type="text" class="form-control" id="peli_genero" name="peli_genero" style="text-align: center;" maxlength="50" />
+            <br>
+
+            <label> Clasificación:</label>
+            <input type="text" class="form-control" id="peli_clasificacion" name="peli_clasificacion" style="text-align: center;" maxlength="10" />
+            <br>
+
+            <label>Formato:</label>
+            <input type="text" class="form-control" id="peli_formato" name="peli_formato" style="text-align: center;" maxlength="10" />
+            <br>
+
+            <label>Sinopsis:</label>
+
+            <textarea class="form-control"  id="peli_sinopsis" name="peli_sinopsis" style="text-align: center;" maxlength="500" rows="10" cols="220">
+
+            </textarea>
+            <br>
 
 
 
-</div>
-<font color="white">
-<label>Película: </label><label> Boruto The movie</label><br>
-<label>Duración: </label><label> 96 min</label><br>
-<label>Género: </label><label> Acción y aventura</label><br>
-    <label>Clasificación: </label><label> B</label><br>
-    <label>Formato: </label><label> 2D</label>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<label style="font-size: large; padding-left: 5%">Horario</label></br>
-<label  size="6" style="width: 50%; padding-left: 5%" >Boruto es el hijo del Séptimo Hokage Naruto, quien rechaza por completo a su padre. Detrás de esto, él tiene sentimientos de querer superar a Naruto, que es respetado como un héroe. Él termina conociendo al amigo de su padre, Sasuke, y le pedirá convertirse en… ¿¡Su aprendiz!? ¡El telón se levanta en la historia de la nueva generación escrita por Masashi Kishimoto! </label>
-</font>>
 
-<div align="center" >
+            <br>
 
-
-
-    <video width="800" height="533" controls>
-        <source src="../video/Boruto.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <form action="cerrar_sesion.php">
-        <input type="submit" value="Cerrar">
-    </form>
-
-
-</div>
-
+            <button type="submit" class="btn btn-outline btn-success"><i class="fa fa-sign-in"></i> Ingresar</button>
+        </form>
+    </div>
 
 <script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
