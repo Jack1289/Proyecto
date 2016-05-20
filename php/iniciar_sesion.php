@@ -19,7 +19,9 @@
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/login.css">
       
-    <script src="https://use.fontawesome.com/fe55c3cf21.js"></script>
+    <!--<script src="https://use.fontawesome.com/fe55c3cf21.js"></script>-->
+    
+     <?php //require_once('../html/header-comun.html'); ?>
 
   </head>
   <body background="../img/h.jpg">
@@ -65,8 +67,8 @@
 	</div>
 </div>
     <center>
-	<div class="form-group" style="width: 10%; color: white; margin-top: 12%;" align="center">
-	  <form>
+	<div  style="width: 10%; color: white; margin-top: 12%;" align="center">
+	  <form id="formularioSesion" method="POST" action="validar_sesion.php">
 	    
 	    
             <label for="usuario">Usuario:</label>
@@ -76,14 +78,15 @@
             <label for="contrasena">Contrase&ntilde;a:</label>
             <input type="password" class="form-control" id="contrasena" name="contrasena" style="text-align: center;" maxlength="12" />
 	    <br><br>
+	    <input type="submit" value="X:">
 	      
-	    <button type="submit" class="btn btn-outline btn-success"><i class="fa fa-sign-in"></i> Ingresar</button>
+	    <!--<button type="submit" class="btn btn-outline btn-success"><i class="fa fa-sign-in"></i> Ingresar</button>-->
 	  </form>
         </div>
     </center>
+    
+      <?php //require_once('../html/footer-comun.html'); ?>
 
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/scripts.js"></script>
+    
   </body>
 </html>

@@ -1,4 +1,16 @@
-﻿<!DOCTYPE html>
+﻿<?php
+    session_start();
+    if(isset($_SESSION['usuario'])){
+       
+    }else{
+        ?>
+        <script type="text/javascript">
+            window.location="iniciar_sesion.php"
+        </script>
+        <?php
+    }
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -83,7 +95,9 @@
         <source src="../video/Boruto.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-
+    <form action="cerrar_sesion.php">
+        <input type="submit" value="Cerrar">
+    </form>
 
 
 </div>
