@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿<?php
+    $idPelicula=1;
+    require_once('conexion-adodb.php');
+    $sql="select idPelicula, nombre, duracion, genero, clasificacion, formato, sinopsis, horario, poster, trailer
+            from peliculas where idPelicula=$idPelicula";
+    $sentencia=$db->Execute($sql);
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -59,7 +66,7 @@
 
 
     <br>
-    <img src="../img/boruto.jpg" width="400px" style="float: left; padding-left: 5%" >
+    <img src="<?php echo $sentencia->fields('poster');?>" width="400px" style="float: left; padding-left: 5%" >
 
 
 
@@ -67,22 +74,52 @@
 
 </div>
 <font color="white">
-<label>Película: </label><label> Boruto The movie</label><br>
-<label>Duración: </label><label> 96 min</label><br>
-<label>Género: </label><label> Acción y aventura</label><br>
-    <label>Clasificación: </label><label> B</label><br>
-    <label>Formato: </label><label> 2D</label>
+<label>Película:&nbsp;</label><label><?php echo $sentencia->fields('nombre');?></label><br>
+<label>Duración:&nbsp; </label><label><?php echo $sentencia->fields('duracion');?></label><br>
+<label>Género:&nbsp; </label><label><?php echo $sentencia->fields('genero');?></label><br>
+    <label>Clasificación:&nbsp; </label><label> <?php echo $sentencia->fields('clasificacion');?></label><br>
+    <label>Formato:&nbsp; </label><label><?php echo $sentencia->fields('formato');?></label>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <label style="font-size: large; padding-left: 5%">Horario</label></br>
-<label  size="6" style="width: 50%; padding-left: 5%" >Boruto es el hijo del Séptimo Hokage Naruto, quien rechaza por completo a su padre. Detrás de esto, él tiene sentimientos de querer superar a Naruto, que es respetado como un héroe. Él termina conociendo al amigo de su padre, Sasuke, y le pedirá convertirse en… ¿¡Su aprendiz!? ¡El telón se levanta en la historia de la nueva generación escrita por Masashi Kishimoto! </label>
-</font>>
+<select id="horario" name="horario" style="color: black;">
+    <option value="">Seleccione una hora</option>
+   <?php
+        $servername = "50.62.176.63";
+        $username = "admincinema";
+        $password = "sysadmin";
+        $dbname = "cinemas_delicias";
+        
+        // Create connection
+        $conn = mysqli_connect($servername, $username, $password, $dbname);
+        // Check connection
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+        
+        $sql = "SELECT horario FROM horarios WHERE idPelicula=1";
+        $result = mysqli_query($conn, $sql);
+        
+        if (mysqli_num_rows($result) > 0) {
+            while($row = mysqli_fetch_assoc($result)) {
+            ?><option value="<?php echo $row["horario"] ?>"><?php echo $row["horario"] ?></option> <?php
+            }
+        } else {
+            ?><option value=""><?php echo "No hay horarios disponibles" ?></option> <?php
+        }
+        
+        mysqli_close($conn);
+                            
+                                                        ?>
+</select>
+<label  size="6" style="width: 50%; padding-left: 5%" ><?php echo $sentencia->fields('sinopsis'); ?></label>
+</font>
 
 <div align="center" >
 
 
 
     <video width="800" height="533" controls>
-        <source src="../video/Boruto.mp4" type="video/mp4">
+        <source src="<?php echo $sentencia->fields('trailer');?>" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 

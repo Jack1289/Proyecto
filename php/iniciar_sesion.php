@@ -78,13 +78,12 @@
             <label for="contrasena">Contrase&ntilde;a:</label>
             <input type="password" class="form-control" id="contrasena" name="contrasena" style="text-align: center;" maxlength="12" />
 	    <br><br>
-	    <input type="submit" value="X:">
-	      
-	    <!--<button type="submit" class="btn btn-outline btn-success"><i class="fa fa-sign-in"></i> Ingresar</button>-->
+	    
+	    <button type="submit" class="btn btn-outline btn-success"><i class="fa fa-sign-in"></i> Ingresar</button>
 	  </form>
         </div>
     </center>
-    
+      <script src="https://use.fontawesome.com/fe55c3cf21.js"></script>
       <?php //require_once('../html/footer-comun.html'); ?>
 
     
