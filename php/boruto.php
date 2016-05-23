@@ -67,11 +67,11 @@
 
 </div>
 <font color="white">
-<label>Película: </label><label> Boruto The movie</label><br>
+<label>Película: </label><label> Boruto The movie 2</label><br>
 <label>Duración: </label><label> 96 min</label><br>
 <label>Género: </label><label> Acción y aventura</label><br>
     <label>Clasificación: </label><label> B</label><br>
-    <label>Formato: </label><label> 2D</label>
+    <label>Formato: </label><label> Digital</label>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <label style="font-size: large; padding-left: 5%">Horario</label></br>
 <label  size="6" style="width: 50%; padding-left: 5%" >Boruto es el hijo del Séptimo Hokage Naruto, quien rechaza por completo a su padre. Detrás de esto, él tiene sentimientos de querer superar a Naruto, que es respetado como un héroe. Él termina conociendo al amigo de su padre, Sasuke, y le pedirá convertirse en… ¿¡Su aprendiz!? ¡El telón se levanta en la historia de la nueva generación escrita por Masashi Kishimoto! </label>

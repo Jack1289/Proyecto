@@ -102,7 +102,7 @@
             <br>
 
 
-            
+
         </form>
         <form action="cerrar_sesion.php">
             <input type="submit" value="Cerrar">
