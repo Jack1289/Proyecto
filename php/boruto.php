@@ -1,9 +1,9 @@
 ﻿<?php
     $idPelicula=1;
-    require_once('conexion-adodb.php');
+    require_once('conexion-adodb.php');//CONEXION A BASE DE DATOS
     $sql="select idPelicula, nombre, duracion, genero, clasificacion, formato, sinopsis, horario, poster, trailer
             from peliculas where idPelicula=$idPelicula";
-    $sentencia=$db->Execute($sql);
+    $sentencia=$db->Execute($sql);//db es la coneccion de la base de datos
 ?>
 <!DOCTYPE html>
 <html lang="en">
