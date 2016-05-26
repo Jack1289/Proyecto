@@ -2,8 +2,13 @@
     $idPelicula=1;
     require_once('conexion-adodb.php');//CONEXION A BASE DE DATOS
     $sql="select idPelicula, nombre, duracion, genero, clasificacion, formato, sinopsis, horario, poster, trailer
+<<<<<<< HEAD
             from peliculas where idPelicula=$idPelicula";
     $sentencia=$db->Execute($sql);//db es la coneccion de la base de datos
+=======
+            from peliculas where idPelicula=$idPelicula"; //se elige los datos de la pelicula del SQL
+    $sentencia=$db->Execute($sql);
+>>>>>>> origin/master
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +51,7 @@
                         <div class="form-group">
                             <input type="text" class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-default">
+                        <button type="submit" class = "btn btn-default" ><i class="fa fa-search" aria-hidden="true"></i>
                             Submit
                         </button>
                     </form>
@@ -82,7 +87,7 @@
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <label style="font-size: large; padding-left: 5%">Horario</label></br>
 <select id="horario" name="horario" style="color: black;">
-    <option value="">Seleccione una hora</option>
+    <option value="">Seleccione una función</option>
    <?php
         $servername = "50.62.176.63";
         $username = "admincinema";
