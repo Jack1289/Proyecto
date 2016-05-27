@@ -52,7 +52,7 @@
         </div>
     </div>
 </div>
-<br><br><br>
+<br><br><br><br><br>
 <div style="padding-left: 10%">
 <div>
     <img src="../img/asientov.png" width="50" style="float: left; padding-left: .5%">
