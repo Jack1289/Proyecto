@@ -13,4 +13,14 @@
     //if($db1==false)die ('Error');
      //$db1->Connect('50.62.176.63','admincinema','sysadmin','cinemas_delicias');
     //if($db1==false)die ('Error');
+    $servername = "50.62.176.63";
+    $username = "admincinema";
+    $password = "sysadmin";        $dbname = "cinemas_delicias";
+    
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+        // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
 ?>
