@@ -17,17 +17,26 @@
             $result = mysqli_query($conn, $sql);
             $sql2 = "SELECT contrasena FROM admin WHERE contrasena='$contrasena1'";
             $result2 = mysqli_query($conn, $sql2);
-            if ($result==true) {
-               if(mysqli_num_rows($result2) > 0){
-                $bandera=3;
-               }else{
-                $bandera=1;
-               }
+            if ($result == true) {
+                if (mysqli_num_rows($result2) > 0) {
+                    $bandera = 3;
+                    $contrasenaActual='';
+                    $contrasena1='';
+                    $contrasena2='';
+                } else {
+                    $bandera = 1;
+                    $contrasenaActual='';
+                    $contrasena1='';
+                    $contrasena2='';
+                }
             } else {
-                 ?>
-                   
+                $bandera=1;
+                $contrasenaActual='';
+                $contrasena1='';
+                $contrasena2='';
+                ?>
                 <?php
-            }
+                }
             mysqli_close($conn);
         }
     }else{
@@ -63,7 +72,7 @@
 
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                    </button> <a class="navbar-brand" href="../index.html">Cinemas Delicias</a>
+                    </button> <a class="navbar-brand" href="../index.php">Cinemas Delicias</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -108,17 +117,17 @@
             <form id="cambiarContrasena" name="cambiarContrasena" method="POST">
 
                 <label>Contrase&ntilde;a Actual:</label>
-                <input type="password" class="form-control" id="contrasenaAcutal" name="contrasenaActual" style="text-align: center;" maxlength="" autofocus="true"  value="" require/>
+                <input type="password" class="form-control" id="contrasenaAcutal" name="contrasenaActual" style="text-align: center;" maxlength="" autofocus="true"  value="" required/>
                 <br>
     
                 <label>Contrase&ntilde;a Nueva:</label>
-                <input type="password" class="form-control" id="contrasena1" name="contrasena1" style="text-align: center;" maxlength="" value="" require/>
+                <input type="password" class="form-control" id="contrasena1" name="contrasena1" style="text-align: center;" maxlength="" value="" required onkeyup="verificarContrasena();"/>
                 <br>
     
                 <label>Repetir Contrase&ntilde;a Nueva:</label>
-                <input type="password" class="form-control" id="contrasena2" name="contrasena2" style="text-align: center;" maxlength="" value="" require/>
+                <input type="password" class="form-control" id="contrasena2" name="contrasena2" style="text-align: center;" maxlength="" value="" required onkeyup="verificarContrasena();"/>
                 <br>
-                <button type="submit" id="guardar" name="guardar" class="btn btn-success" onclick="verificarContrasena();"><i class="fa fa-floppy-o"></i> Guardar</button>
+                <button type="submit" id="guardar" name="guardar" class="btn btn-success" onclick="verificarContrasena();" disabled="true"><i class="fa fa-floppy-o"></i> Guardar</button>
     
                 <br>
                 <input id="bandera" name="bandera" type="hidden" value="<?php echo $bandera;?>"/>

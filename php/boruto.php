@@ -1,9 +1,11 @@
 ﻿<?php
-    $idPelicula=1;
+session_start();
+$idPelicula=$_SESSION['idPelicula'];
     require_once('conexion-adodb.php');
     $sql="select idPelicula, nombre, duracion, genero, clasificacion, formato, sinopsis, horario, poster, trailer
-            from peliculas where idPelicula=$idPelicula";
+            from peliculas where idPelicula='$idPelicula'";
     $sentencia=$db->Execute($sql);
+$_SESSION['idPelicula']=0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +33,7 @@
 
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                    </button> <a class="navbar-brand" href="../index.html">Cinemas Delicias</a>
+                    </button> <a class="navbar-brand" href="../index.php">Cinemas Delicias</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -96,7 +98,7 @@
             die("Connection failed: " . mysqli_connect_error());
         }
         
-        $sql = "SELECT horario FROM horarios WHERE idPelicula=1";
+        $sql = "SELECT horario FROM horarios WHERE idPelicula=16";
         $result = mysqli_query($conn, $sql);
         
         if (mysqli_num_rows($result) > 0) {
@@ -124,10 +126,10 @@
     </video>
 
 
-
+    <input type="submit" onclick="hola();" value="as">
 </div>
-
-
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="../js/index.js"></script>
 <script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/scripts.js"></script>

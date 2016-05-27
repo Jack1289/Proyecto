@@ -3,21 +3,18 @@ function verificarContrasena(){
                var contrasena1=document.getElementById('contrasena1').value;
                var contrasena2=document.getElementById('contrasena2').value;
                
-               if (contrasena1==contrasena2) {
-                     notificacionWarning('Las Password no coiniciden');
-                     return false;
-               }else{
-                   notificacionWarning('Las Password no coiniciden');
-                   return false;
+               if (contrasena1!=contrasena2 || (contrasena1=='' || contrasena2=='')) {
+                     document.getElementById('guardar').disabled=true;
+               }else if(contrasena1==contrasena2&&(contrasena1!='' || contrasena2!='')){
+                   document.getElementById('guardar').disabled=false;
                }
-    return false;
 }
 var bandera=document.getElementById('bandera').value;
             function notificacionError() {
                 $.notify({
                         icon: 'fa fa-exclamation-circle',
                         title: '<strong>Error</strong><br>',
-                        message: 'Error al cambiar el Password',
+                        message: 'El Password Actual no es correcto',
                 }, {
                         // settings
                         element: 'body',

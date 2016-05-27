@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,9 +51,7 @@
 						<div class="form-group">
 							<input type="text" class="form-control">
 						</div> 
-						<button type="submit" class="btn btn-default">
-							Submit
-						</button>
+						<button type="submit" class="btn btn-default"><i class="fa fa-paw"></i> Submit</button>
 					</form>
 					<ul class="nav navbar-nav navbar-right">
 
@@ -80,10 +81,10 @@
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox" align="center">
 			<div class="item active">
-				<a href="php/boruto.php"><img src="img/boruto.jpg" alt="Boruto" width="590px"></a>
+				<a href="#" onClick="hola();"><img src="img/boruto.jpg" alt="Boruto" width="590px"></a>
 			</div>
 			<div class="item">
-				<a href="php/xmen.php"><img src="img/xmen.jpg" alt="X:Men" width="590px"></a>
+				<a href="php/boruto.php"><img src="img/xmen.jpg" alt="X:Men" width="590px"  onclick=""></a>
 			</div>
 			<div class="item">
 				<a href="php/suicide.php"><img src="img/escuadron-fanposter-restro.jpg" alt="X:Men" width="590px"></a>
@@ -102,7 +103,7 @@
                         <img src="img_flower2.jpg" alt="Flower">
                     </div>-->
 		</div>
-
+		<input type="hidden" id="idPelicula" value="0">
 		<!-- Left and right controls -->
 		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
 			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -113,8 +114,10 @@
 			<span class="sr-only">Next</span>
 		</a>
 	</div>
-		
+<input type="submit" onclick="hola();" value="as">
 
+
+	<script src="js/index.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
