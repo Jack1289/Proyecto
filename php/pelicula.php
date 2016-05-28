@@ -38,7 +38,7 @@
                         <div class="form-group">
                             <input type="text" class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-default">
+                        <button type="submit" class = "btn btn-default" ><i class="fa fa-search" aria-hidden="true"></i>
                             Submit
                         </button>
                     </form>
@@ -51,6 +51,48 @@
         </div>
     </div>
 </div>
+
+<div>
+    <img src="../img/boruto.jpg" width="450px" height="520" style="float: left; padding-left: 5%" >
+</div>
+<div>
+    <img src="../img/alicia.jpg" width="450px"  height="520" style="float: left; padding-left: 5%" >
+</div>
+<div>
+    <img src="../img/animales-fantasticos.jpg" width="450px"  height="520" style="float: left; padding-left: 5%" >
+</div>
+<div>
+    <img src="../img/warcraft.jpg" width="450px"  height="520" style="float: left; padding-left: 5%" >
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div>
+    <img src="../img/xmen.jpg" width="450px"  height="520" style="float: left; padding-left: 5%" >
+</div>
+<div>
+    <img src="../img/vecinos.jpg" width="450px"  height="520" style="float: left; padding-left: 5%" >
+</div>
+<div>
+    <img src="../img/suicide.jpg" width="450px"  height="520" style="float: left; padding-left: 5%" >
+</div>
+<div>
+    <img src="../img/dory.jpg" width="450px"  height="520" style="float: left; padding-left: 5%" >
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--<div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

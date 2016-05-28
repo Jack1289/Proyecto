@@ -82,7 +82,7 @@
                         <div class="form-group">
                             <input type="text" class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-default">
+                        <button type="submit" class = "btn btn-default" ><i class="fa fa-search" aria-hidden="true"></i>
                             Submit
                         </button>
                     </form>
@@ -111,44 +111,44 @@
         <form id="cambiarCartelera" name="cambiarCartelera" method="POST" >
 
 
-            <label>Pelìcula:</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" style="text-align: center; text-transform: uppercase;" maxlength="30" autofocus="true"  value="" require/>
+            <label>Nombre de la Pelìcula:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" style="text-align: center; text-transform: uppercase;" maxlength="30" autofocus="true"  value="" required/>
             <br>
 
             <label >Duración:</label>
-            <input type="text" class="form-control form-inline " id="duracion" name="duracion" style="text-align: center;" maxlength="12" value=""/>
+            <input type="text" class="form-control form-inline " id="duracion" name="duracion" style="text-align: center;" maxlength="12" value="" required/>
             <br>
 
             <label>Género:</label>
-            <input type="text" class="form-control" id="genero" name="genero" style="text-align: center;" maxlength="50" value=""/>
+            <input type="text" class="form-control" id="genero" name="genero" style="text-align: center;" maxlength="50" value="" required />
             <br>
 
             <label> Clasificación:</label>
-            <input type="text" class="form-control" id="clasificacion" name="clasificacion" style="text-align: center;" maxlength="10" value=""/>
+            <input type="text" class="form-control" id="clasificacion" name="clasificacion" style="text-align: center;" maxlength="10" value="" required/>
             <br>
 
             <label>Formato:</label>
-            <input type="text" class="form-control" id="formato" name="formato" style="text-align: center;" maxlength="10" value=""/>
+            <input type="text" class="form-control" id="formato" name="formato" style="text-align: center;" maxlength="10" value="" required/>
             <br>
 
             <label>Sinopsis:</label>
-            <textarea class="form-control"  id="sinopsis" name="sinopsis" style="text-align: center;" maxlength="500" rows="10" cols="220">
+            <textarea class="form-control"  id="sinopsis" name="sinopsis" style="text-align: center;" maxlength="500" rows="10" cols="220" required>
             </textarea>
             <br>
 
-            <label>Horario:</label>
+            <label>Horarios de Funciones:</label>
             <input type="text" class="form-control" id="horario" name="horario" style="text-align: center;" maxlength="10" value=""/>
             <br>
             
             <label>Poster:</label>
-            <input type="text" class="form-control" id="poster" name="poster" style="text-align: center;" maxlength="10" value=""/>
+            <input type="text" class="form-control" id="poster" name="poster" style="text-align: center;" maxlength="10" value="" required/>
             <br>
                 
-            <label>Video:</label>
-            <input type="text" class="form-control" id="trailer" name="trailer" style="text-align: center;" maxlength="10" value=""/>
+            <label>Trailer:</label>
+            <input type="text" class="form-control" id="trailer" name="trailer" style="text-align: center;" maxlength="10" value="" required/>
             <br>
 
-            <button type="submit" id="guardar" name="guardar" class="btn btn-outline btn-success"><i class="fa fa-floppy-o"></i> Guardar</button>
+            <button type="submit" id="guardar" name="guardar" class="btn btn-outline btn-success"><i class="fa fa-floppy-o"></i> Guardar Película</button>
 
             <br>
             

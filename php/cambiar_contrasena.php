@@ -87,7 +87,7 @@
                         <div class="form-group">
                             <input type="text" class="form-control">
                         </div>
-                        <button type="submit" class="btn btn-default">
+                        <button type="submit" class = "btn btn-default" ><i class="fa fa-search" aria-hidden="true"></i>
                             Submit
                         </button>
                     </form>
