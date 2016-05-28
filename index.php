@@ -50,14 +50,12 @@ session_start();
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
 							<input type="text" class="form-control">
-						</div> 
-<<<<<<< HEAD:index.php
+						</div>
 						<button type="submit" class="btn btn-default"><i class="fa fa-paw"></i> Submit</button>
-=======
+
 						<button type="submit" class = "btn btn-default" ><i class="fa fa-search" aria-hidden="true"></i>
 							Submit
 						</button>
->>>>>>> origin/master:index.html
 					</form>
 					<ul class="nav navbar-nav navbar-right">
 

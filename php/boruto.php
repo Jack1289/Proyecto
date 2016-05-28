@@ -1,5 +1,4 @@
 ﻿<?php
-<<<<<<< HEAD
 session_start();
 $idPelicula=$_SESSION['idPelicula'];
     require_once('conexion-adodb.php');
@@ -7,18 +6,7 @@ $idPelicula=$_SESSION['idPelicula'];
             from peliculas where idPelicula='$idPelicula'";
     $sentencia=$db->Execute($sql);
 $_SESSION['idPelicula']=0;
-=======
-    $idPelicula=1;
-    require_once('conexion-adodb.php');//CONEXION A BASE DE DATOS
-    $sql="select idPelicula, nombre, duracion, genero, clasificacion, formato, sinopsis, horario, poster, trailer
-<<<<<<< HEAD
-            from peliculas where idPelicula=$idPelicula";
-    $sentencia=$db->Execute($sql);//db es la coneccion de la base de datos
-=======
-            from peliculas where idPelicula=$idPelicula"; //se elige los datos de la pelicula del SQL
-    $sentencia=$db->Execute($sql);
->>>>>>> origin/master
->>>>>>> origin/master
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
