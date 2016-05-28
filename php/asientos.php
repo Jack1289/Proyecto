@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bootstrap 3, from LayoutIt!</title>
+    <title>Cinemas Delicias - Oficial Site</title>
 
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
@@ -24,7 +24,7 @@
 
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                    </button> <a class="navbar-brand" href="../index.html">Cinemas Delici</a>
+                    </button> <a class="navbar-brand" href="../index.html">Cinemas Delicias</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -52,6 +52,7 @@
         </div>
     </div>
 </div>
+<br><br><br><br><br>
 <div style="padding-left: 10%">
 <div>
     <img src="../img/asientov.png" width="50" style="float: left; padding-left: .5%">

@@ -1,38 +1,7 @@
 <?php
     session_start();
     if(isset($_SESSION['usuario'])){
-        if(isset($_POST['guardar'])){
-            require_once('conexion-adodb.php');
-            $nombre=$_POST['nombre'];
-            $duracion=$_POST['duracion'];
-            $genero=$_POST['genero'];
-            $clasificacion=$_POST['clasificacion'];
-            $formato=$_POST['formato'];
-            $sinopsis=$_POST['sinopsis'];
-            $horario=$_POST['horario'];
-            $poster=$_POST['poster'];
-            $trailer=$_POST['trailer'];
-             foreach($_POST as $key=>$value){
-                 $swap=$key;
-                 $$swap=$value;
-                }
-            $sql="INSERT INTO peliculas VALUES ('0','$nombre','$duracion','$genero','$clasificacion','$formato','$sinopsis','$horario','$poster','$trailer')";
-            $sentencia=$db->Execute($sql);
-            if($sentencia==true){
-             ?>
-              <script type="text/javascript">
-                alert("Se registró correctamente");
-              </script>
-        <?php
-            }else{
-            ?>
-                <script type="text/javascript">
-                    window.location="administrador_menu.php"
-                    alert("Hubó un error al registrar la película");
-                </script>
-            <?php
-            }
-        }
+
     }else{
     ?>
     <script type="text/javascript">
@@ -42,21 +11,20 @@
     }
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="utf-8_spanish_ci">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bootstrap 3, from LayoutIt!</title>
+    <title>Cinemas Delicias - Oficial Site</title>
 
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
-    
-    <script src="https://use.fontawesome.com/fe55c3cf21.js"></script>
+
 </head>
 <body  background="../img/h.jpg">
 <div class="container-fluid">
@@ -82,22 +50,12 @@
                         <div class="form-group">
                             <input type="text" class="form-control">
                         </div>
-                        <button type="submit" class = "btn btn-default" ><i class="fa fa-search" aria-hidden="true"></i>
+                        <button type="submit" class="btn btn-default">
                             Submit
                         </button>
                     </form>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo strtoupper($_SESSION['usuario']); ?><strong class="caret"></strong></a>
-                                <ul class="dropdown-menu">
-                                     <li>
-                                        <a href="cambiar_contrasena.php"><i class="fa fa-lock"></i> Cambiar Contrase&ntilde;a</a>
-                                     </li>
-                                     <li>
-                                        <a href="cerrar_sesion.php"><i class="fa fa-sign-out"></i> Cerrar Sesi&oacute;n</a>
-                                     </li>
-                                </ul>                         
-                        </li>            
+
                     </ul>
                 </div>
 
@@ -108,50 +66,46 @@
 
 
     <div class="form-group"  style="width: 50%; color: white; margin-left: 5%;" align="center">
-        <form id="cambiarCartelera" name="cambiarCartelera" method="POST" >
+        <form id="cambiarCartelera" name="cambiarCartelera">
 
 
-            <label>Nombre de la Pelìcula:</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" style="text-align: center; text-transform: uppercase;" maxlength="30" autofocus="true"  value="" required/>
+            <label >Pelìcula:</label>
+            <input type="text" class="form-control" id="nom_pelicula" name="nom_pelicula" style="text-align: center; text-transform: uppercase;" maxlength="30" autofocus="true"  />
             <br>
 
             <label >Duración:</label>
-            <input type="text" class="form-control form-inline " id="duracion" name="duracion" style="text-align: center;" maxlength="12" value="" required/>
+            <input type="text" class="form-control form-inline " id="peli_duracion" name="peli_duracion" style="text-align: center;" maxlength="12" />
             <br>
 
             <label>Género:</label>
-            <input type="text" class="form-control" id="genero" name="genero" style="text-align: center;" maxlength="50" value="" required />
+            <input type="text" class="form-control" id="peli_genero" name="peli_genero" style="text-align: center;" maxlength="50" />
             <br>
 
             <label> Clasificación:</label>
-            <input type="text" class="form-control" id="clasificacion" name="clasificacion" style="text-align: center;" maxlength="10" value="" required/>
+            <input type="text" class="form-control" id="peli_clasificacion" name="peli_clasificacion" style="text-align: center;" maxlength="10" />
             <br>
 
             <label>Formato:</label>
-            <input type="text" class="form-control" id="formato" name="formato" style="text-align: center;" maxlength="10" value="" required/>
+            <input type="text" class="form-control" id="peli_formato" name="peli_formato" style="text-align: center;" maxlength="10" />
             <br>
 
             <label>Sinopsis:</label>
-            <textarea class="form-control"  id="sinopsis" name="sinopsis" style="text-align: center;" maxlength="500" rows="10" cols="220" required>
+
+            <textarea class="form-control"  id="peli_sinopsis" name="peli_sinopsis" style="text-align: center;" maxlength="500" rows="10" cols="220">
+
             </textarea>
             <br>
 
-            <label>Horarios de Funciones:</label>
-            <input type="text" class="form-control" id="horario" name="horario" style="text-align: center;" maxlength="10" value=""/>
-            <br>
-            
-            <label>Poster:</label>
-            <input type="text" class="form-control" id="poster" name="poster" style="text-align: center;" maxlength="10" value="" required/>
-            <br>
-                
-            <label>Trailer:</label>
-            <input type="text" class="form-control" id="trailer" name="trailer" style="text-align: center;" maxlength="10" value="" required/>
-            <br>
 
-            <button type="submit" id="guardar" name="guardar" class="btn btn-outline btn-success"><i class="fa fa-floppy-o"></i> Guardar Película</button>
+
 
             <br>
-            
+
+
+
+        </form>
+        <form action="cerrar_sesion.php">
+            <input type="submit" value="Cerrar">
         </form>
     </div>
 
