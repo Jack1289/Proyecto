@@ -31,7 +31,7 @@ session_start();
     <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<nav class="navbar navbar-default" role="navigation">
+			<nav class="navbar navbar-default" style="background-color: deepskyblue" role="navigation">
 				<div class="navbar-header">
 					 
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -51,7 +51,13 @@ session_start();
 						<div class="form-group">
 							<input type="text" class="form-control">
 						</div> 
+<<<<<<< HEAD:index.php
 						<button type="submit" class="btn btn-default"><i class="fa fa-paw"></i> Submit</button>
+=======
+						<button type="submit" class = "btn btn-default" ><i class="fa fa-search" aria-hidden="true"></i>
+							Submit
+						</button>
+>>>>>>> origin/master:index.html
 					</form>
 					<ul class="nav navbar-nav navbar-right">
 
@@ -87,7 +93,7 @@ session_start();
 				<a href="php/boruto.php"><img src="img/xmen.jpg" alt="X:Men" width="590px"  onclick=""></a>
 			</div>
 			<div class="item">
-				<a href="php/suicide.php"><img src="img/escuadron-fanposter-restro.jpg" alt="X:Men" width="590px"></a>
+				<a href="php/asientos.php"><img src="img/escuadron-fanposter-restro.jpg" alt="X:Men" width="590px"></a>
 			</div>
 			<div class="item">
 				<a href="php/bestias.php"><img src="img/animales-fantasticos.jpg" alt="X:Men" width="590px"></a>
