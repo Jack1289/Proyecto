@@ -86,7 +86,7 @@ session_start();
 		<div class="carousel-inner" role="listbox" align="center">
 			<div class="item active">
 				<a href="#" onClick="hola();"><img src="img/boruto.jpg" alt="Boruto" width="590px"></a>
-			</div>
+		</div>
 			<div class="item">
 				<a href="php/boruto.php"><img src="img/xmen.jpg" alt="X:Men" width="590px"  onclick=""></a>
 			</div>

@@ -1,3 +1,14 @@
+<?php
+
+    session_start();
+    $idPelicula=$_SESSION['idPelicula'];
+    require_once('conexion-adodb.php');
+    $sql="select idPelicula, nombre, duracion, genero, clasificacion, formato, sinopsis, horario, poster, trailer
+                from peliculas where idPelicula='$idPelicula'";
+    $sentencia=$db->Execute($sql);
+    $_SESSION['idPelicula']=0;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

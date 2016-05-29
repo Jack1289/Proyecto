@@ -1,3 +1,24 @@
+<?php
+    session_start();
+
+    $servername = "50.62.176.63";
+    $username = "admincinema";
+    $password = "sysadmin";
+    $dbname = "cinemas_delicias";
+
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    $sql = "SELECT src FROM asientos WHERE sala='Sala 1'";
+    $result = mysqli_query($conn, $sql);
+    $i=0;
+    $arr=[];
+    while($row = mysqli_fetch_assoc($result)) {
+       $arr[$i]=$row;
+        $i=$i+1;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,14 +75,15 @@
 </div>
 <br><br><br><br><br>
 <div style="padding-left: 18%">
+
 <div>
-    <img src="../img/asientov.png" width="50" style="float: left; padding-left: .5%">
+    <img  onclick="taquito(this);" src="<?php echo $arr[0]['src']; ?>" width="50" style="float: left; padding-left: .5%">
 </div>
 <div>
-    <img src="../img/asientov.png" width="50"  style="float: left; padding-left: .5%">
+    <img onclick="taquito(this);" src="<?php echo $arr[1]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
 </div>
 <div>
-    <img src="../img/asientov.png" width="50"  style="float: left; padding-left: .5%">
+    <img onclick="taquito(this);" src="../img/asientov.png" width="50"  style="float: left; padding-left: .5%">
 </div>
 <div>
     <img src="../img/asientov.png" width="50"  style="float: left; padding-left: .5%">
@@ -495,7 +517,7 @@ s<br><br><br>
 
 </div>
 
-
+<script type="text/javascript" src="../js/asientos.js"></script>
 <script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/scripts.js"></script>

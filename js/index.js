@@ -7,5 +7,6 @@ function hola() {
         function(data, status){
             //alert("Data: " + data + "\nStatus: " + status);
             window.location="../php/boruto.php"
+            //alert();
         });
 }
