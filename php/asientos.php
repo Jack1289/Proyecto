@@ -83,46 +83,46 @@
     <img onclick="taquito(this);" src="<?php echo $arr[1]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
 </div>
 <div>
-    <img onclick="taquito(this);" src="../img/asientov.png" width="50"  style="float: left; padding-left: .5%">
+    <img onclick="taquito(this);" src="<?php echo $arr[2]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
 </div>
 <div>
-    <img src="../img/asientov.png" width="50"  style="float: left; padding-left: .5%">
+    <img onclick="taquito(this);" src="<?php echo $arr[3]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
 </div>
 <div>
-    <img src="../img/asientov.png"  width="50" style="float: left; padding-left: .5%">
+    <img onclick="taquito(this);" src="<?php echo $arr[4]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
 </div>
 <div>
-    <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
+    <img onclick="taquito(this);" src="<?php echo $arr[5]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
 </div>
     <div>
-        <img src="../img/asientov.png" width="50" style="float: left; padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[6]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png" width="50"  style="float: left; padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[7]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png" width="50"  style="float: left; padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[8]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png" width="50"  style="float: left; padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[9]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png"  width="50" style="float: left; padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[10]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[11]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png" width="50" style="float: left; padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[12]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png" width="50"  style="float: left; padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[13]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png" width="50"  style="float: left; padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[14]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png" width="50"  style="float: left; padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[15]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
 
 
@@ -132,55 +132,54 @@
 
 
 <div style="padding-left: 18%">
-<div>
-    <img src="../img/asientov.png" width="50" style="float: left; padding-left: .5%">
-</div>
-<div>
-    <img src="../img/asientov.png" width="50"  style="float: left; padding-left: .5%">
-</div>
-<div>
-    <img src="../img/asientov.png" width="50"  style="float: left; padding-left: .5%">
-</div>
-<div>
-    <img src="../img/asientov.png" width="50"  style="float: left; padding-left: .5%">
-</div>
-<div>
-    <img src="../img/asientov.png"  width="50" style="float: left; padding-left: .5%">
-</div>
-<div>
-    <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
-</div>
     <div>
-        <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
+        <img  onclick="taquito(this);" src="<?php echo $arr[16]['src']; ?>" width="50" style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[17]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[18]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[19]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[20]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[21]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[22]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[23]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[24]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[25]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
-
+    <div>
+        <img onclick="taquito(this);" src="<?php echo $arr[26]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
+    </div>
+    <div>
+        <img onclick="taquito(this);" src="<?php echo $arr[27]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
+    </div>
+    <div>
+        <img onclick="taquito(this);" src="<?php echo $arr[28]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
+    </div>
+    <div>
+        <img onclick="taquito(this);" src="<?php echo $arr[29]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
+    </div>
+    <div>
+        <img onclick="taquito(this);" src="<?php echo $arr[30]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
+    </div>
+    <div>
+        <img onclick="taquito(this);" src="<?php echo $arr[31]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
+    </div>
 
 
 
@@ -189,53 +188,53 @@
 <br><br><br>
 
 <div style="padding-left: 18%">
-<div>
-    <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
-</div>
-<div>
-    <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
-</div>
-<div>
-    <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
-</div>
-<div>
-    <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
-</div>
-<div>
-    <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
-</div>
-<div>
-    <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
-</div>
-<div>
-    <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
-</div>
-<div>
-    <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
-</div>
-<div>
-    <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
-</div>
-<div>
-    <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
-</div>
-<div>
-    <img src="../img/asientov.png" width="50" style="float: left; padding-left: .5%">
-</div>
-<div>
-    <img src="../img/asientov.png" width="50"  style="float: left; padding-left: .5%">
-</div>
     <div>
-        <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
+        <img  onclick="taquito(this);" src="<?php echo $arr[32]['src']; ?>" width="50" style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png" width="50" style="float: left;  padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[33]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png" width="50" style="float: left; padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[34]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
     <div>
-        <img src="../img/asientov.png" width="50"  style="float: left; padding-left: .5%">
+        <img onclick="taquito(this);" src="<?php echo $arr[35]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
+    </div>
+    <div>
+        <img onclick="taquito(this);" src="<?php echo $arr[36]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
+    </div>
+    <div>
+        <img onclick="taquito(this);" src="<?php echo $arr[37]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
+    </div>
+    <div>
+        <img onclick="taquito(this);" src="<?php echo $arr[38]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
+    </div>
+    <div>
+        <img onclick="taquito(this);" src="<?php echo $arr[39]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
+    </div>
+    <div>
+        <img onclick="taquito(this);" src="<?php echo $arr[40]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
+    </div>
+    <div>
+        <img onclick="taquito(this);" src="<?php echo $arr[41]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
+    </div>
+    <div>
+        <img onclick="taquito(this);" src="<?php echo $arr[42]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
+    </div>
+    <div>
+        <img onclick="taquito(this);" src="<?php echo $arr[43]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
+    </div>
+    <div>
+        <img onclick="taquito(this);" src="<?php echo $arr[44]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
+    </div>
+    <div>
+        <img onclick="taquito(this);" src="<?php echo $arr[45]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
+    </div>
+    <div>
+        <img onclick="taquito(this);" src="<?php echo $arr[46]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
+    </div>
+    <div>
+        <img onclick="taquito(this);" src="<?php echo $arr[47]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
     </div>
 
 
