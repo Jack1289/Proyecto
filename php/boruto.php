@@ -1,4 +1,10 @@
 ﻿<?php
+
+
+
+
+
+
     session_start();
     $idPelicula=$_SESSION['idPelicula'];
     require_once('conexion-adodb.php');

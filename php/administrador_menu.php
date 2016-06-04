@@ -98,7 +98,7 @@
 </div>
 
 
-    <label>Inicio</label>
+    <label>Inicio<?php echo $_SESSION['boletos']; ?></label>
 
 <script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>

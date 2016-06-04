@@ -10,3 +10,4 @@ $_SESSION['idPelicula']=$_POST['idPelicula'];
 $_SESSION['horario']=$_POST['horario'];
 $_SESSION['pelicula']=$_POST['pelicula'];
 $_SESSION['poster']=$_POST['poster'];
+$_SESSION['boletos']=$_POST['boletos'];
