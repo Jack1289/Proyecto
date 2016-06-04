@@ -1,14 +1,34 @@
 <?php
-    session_start();
-    if(isset($_SESSION['usuario'])){
+session_start();
+if(isset($_SESSION['usuario'])){
+    if(isset($_POST['guardar'])){
+        require_once('conexion-adodb.php');
+        $usuario=$_POST['usuario'];
+        $contrasena=$_POST['contrasena'];
+        $nombre=$_POST['nombre'];
+        $paterno=$_POST['paterno'];
+        $materno=$_POST['materno'];
 
-    }else{
+        foreach($_POST as $key=>$value){
+            $swap=$key;
+            $$swap=$value;
+        }
+        $sql = "insert into admin values (0,'$usuario','$contrasena','$nombre','$paterno','$materno','1');";
+        $result = mysqli_query($conn, $sql);
+        if ($result == true) {
+
+        } else {
+
+        }
+        mysqli_close($conn);
+    }
+}else{
     ?>
     <script type="text/javascript">
         window.location="iniciar_sesion.php"
     </script>
     <?php
-    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,28 +82,12 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo strtoupper($_SESSION['usuario']); ?><strong class="caret"></strong></a>
                             <ul class="dropdown-menu">
-                                <?php if ($_SESSION['idAutorizacion']=='0'){ ?>
                                 <li>
-                                    <a href="registrar_usuario.php"><i class="fa fa-user-plus"></i> Registrar Usuario</a>
-                                </li>
-                                <li>
-                                    <a href="modificar_usuario.php"><i class="fa fa-users"></i> Modificar Usuario</a>
-                                </li>
-                                <li class="divider">
-                                </li>
-                                <?php } ?>
-                                <li>
-                                    <a href="registrar_pelicula.php"><i class="fa fa-film"></i> Registrar Pel&iacute;cula</a>
-                                </li>
-                                <li>
-                                    <a href="modificar_pelicula.php"><i class="fa fa-pencil"></i> Modificar Pel&iacute;cula</a>
-                                </li>
-                                <li class="divider">
+                                    <a href="administrador_menu.php"><i class="fa fa-home"></i> Inicio</a>
                                 </li>
                                 <li>
                                     <a href="cambiar_contrasena.php"><i class="fa fa-lock"></i> Cambiar Contrase&ntilde;a</a>
                                 </li>
-
                                 <li>
                                     <a href="cerrar_sesion.php"><i class="fa fa-sign-out"></i> Cerrar Sesi&oacute;n</a>
                                 </li>
@@ -96,9 +100,37 @@
         </div>
     </div>
 </div>
+<br><br>
+<center>
+<div class="form-group"  style="width: 30%; color: white; margin-left: 5%;" align="center">
+    <form id="registrarUsuario" name="registrarUsuario" method="post">
+
+        <label style="font-size: larger;">Registrar Usuario</label><br><br><br>
+        <label >Usuario:</label>
+        <input type="text" class="form-control" id="usuario" name="usuario" style="text-align: center; text-transform: uppercase;" maxlength="30" autofocus="true"  required/>
+        <br>
+
+        <label >Contrase&ntilde;a:</label>
+        <input type="text" class="form-control form-inline " id="contrasena" name="contrasena" style="text-align: center;" maxlength="12" required/>
+        <br>
+
+        <label>Nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" style="text-align: center;" maxlength="50" required />
+        <br>
+
+        <label> Apelldio Paterno:</label>
+        <input type="text" class="form-control" id="paterno" name="paterno" style="text-align: center;" maxlength="10" required />
+        <br>
+
+        <label>Apellido Materno:</label>
+        <input type="text" class="form-control" id="materno" name="materno" style="text-align: center;" maxlength="10" required />
+        <br>
+        <button type="submit" id="guardar" name="guardar" class="btn btn-success" onclick="//verificarContrasena();"><i class="fa fa-floppy-o"></i> Guardar</button>
 
 
-    <label>Inicio<?php //echo $_SESSION['boletos']; ?></label>
+    </form>
+</div>
+</center>
 
 <script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
