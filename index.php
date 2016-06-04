@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -88,7 +86,7 @@ session_start();
 				<a href="php/boruto.php"><img src="img/xmen.jpg" alt="X:Men" width="590px"  onclick=""></a>
 			</div>
 			<div class="item">
-				<a href="php/asientos.php"><img src="img/escuadron-fanposter-restro.jpg" alt="X:Men" width="590px"></a>
+				<a href="php/Pagar.php"><img src="img/escuadron-fanposter-restro.jpg" alt="X:Men" width="590px"></a>
 			</div>
 			<div class="item">
 				<a href="php/bestias.php"><img src="img/animales-fantasticos.jpg" alt="X:Men" width="590px"></a>
