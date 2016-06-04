@@ -38,12 +38,12 @@ function comprar(){
         callback: function(result) {
             // result will be true if button was click, while it will be false if users close the dialog directly.
             if(result) {
-                $.post("../php/var.php",
+                $.post("../php/var2.php",
                     {
                         boletos:contador
                     },
                     function(data, status){
-                        window.location="administrador_menu.php"
+                        window.location="pago.php"
                     });
             }else {
             }
