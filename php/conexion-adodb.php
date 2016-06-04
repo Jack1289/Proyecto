@@ -6,7 +6,6 @@
     //$db->Connect('localhost','root','','test');
     $db->Connect('50.62.176.63','admincinema','sysadmin','cinemas_delicias');
     
-    
     //$db1=NewADOConnection('mysqli'); ///En caso de necesitarse
     ///$db2=NewADOConnection('mysqli');
     //$db2->Connect('50.62.176.63','admincinema','sysadmin','cinemas_delicias');

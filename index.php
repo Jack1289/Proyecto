@@ -13,7 +13,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bootstrap 3, from LayoutIt!</title>
+    <title>Cinemas Delicias 3D</title>
 
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
@@ -31,7 +31,7 @@ session_start();
     <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<nav class="navbar navbar-default" style="background-color: deepskyblue" role="navigation">
+			<nav class="navbar navbar-default" style="" role="navigation">
 				<div class="navbar-header">
 					 
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -43,7 +43,7 @@ session_start();
 					<ul class="nav navbar-nav">
 
 						<li>
-							<a href="php/pelicula.php">CARTELERA</a>
+							<a href="php/pelicula.php">Cartelera</a>
 						</li>
 
 					</ul>
@@ -51,19 +51,16 @@ session_start();
 						<div class="form-group">
 							<input type="text" class="form-control">
 						</div>
-						<button type="submit" class="btn btn-default"><i class="fa fa-paw"></i> Submit</button>
+
 
 						<button type="submit" class = "btn btn-default" ><i class="fa fa-search" aria-hidden="true"></i>
-							Submit
+							Buscar
 						</button>
 					</form>
 					<ul class="nav navbar-nav navbar-right">
 
 						<li>
-							<a href="php/iniciar_sesion.php">Iniciar Sesi&oacute;n</a>
-						</li>
-						<li>
-							<a href="php/administrador_menu.php">Gato</a>
+							<a href="php/administrador_menu.php">Iniciar Sesi&oacute;n</a>
 						</li>
 					</ul>
 				</div>
@@ -118,7 +115,6 @@ session_start();
 			<span class="sr-only">Next</span>
 		</a>
 	</div>
-<input type="submit" onclick="hola();" value="as">
 
 
 	<script src="js/index.js"></script>
