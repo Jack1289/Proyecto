@@ -34,6 +34,8 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
 
+    <script src="https://use.fontawesome.com/fe55c3cf21.js"></script>
+
 </head>
 <body  background="../img/h.jpg">
 
@@ -73,7 +75,12 @@
         </div>
     </div>
 </div>
-<br><br><br><br><br>
+<br>
+<center>
+    <label style="color: white;font-size: large;">Seleccione los asientos dando clic sobre ellos</label>
+</center>
+<br>
+<div style="">
 <div style="padding-left: 18%">
 
 <div>
@@ -184,7 +191,11 @@
 
 
 </div>
-
+    <div style="float: left; padding-left: 2%;" >
+        <label style="color: white;font-size: large;">Pel&iacute;cula:&nbsp;&nbsp;</label><label style="color: white;"> <?php echo $_SESSION['pelicula']; ?></label><br>
+        <label style="color: white;font-size: large;">Horario:&nbsp;&nbsp;</label><label style="color: white;"><?php echo $_SESSION['horario']; ?></label><br>
+        <img src="<?php echo $_SESSION['poster']; ?>" alt="Boruto" width="180px" style="float: left;position: absolute ">
+    </div>
 <br><br><br>
 
 <div style="padding-left: 18%">
@@ -402,9 +413,8 @@ s<br><br><br>
     <div>
         <img src="../img/asientov.png" width="50"  style="float: left; padding-left: .5%">
     </div>
-
-
 </div>
+
 
 
 <br><br><br>
@@ -515,6 +525,12 @@ s<br><br><br>
 
 
 </div>
+</div><br><br><br><br>
+<center>
+    <form id="realizarCompra" name="realizarCompra" method="POST">
+        <button type="submit" id="pagar" name="pagar" class="btn btn-success" onclick="verificarContrasena();"><i class="fa fa-money"></i> Pagar</button>
+    </form>
+</center>
 
 <script type="text/javascript" src="../js/asientos.js"></script>
 <script src="../js/jquery.min.js"></script>

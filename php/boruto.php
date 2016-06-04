@@ -76,16 +76,18 @@
 
     <br>
     <img src="<?php echo $sentencia->fields('poster');?>" width="400px" style="float: left; padding-left: 5%" >
+    <input type="hidden" id="poster" name="poster" value="<?php echo $sentencia->fields('poster');?>">
 
 </div>
 <font color="white">
     <label style="padding-left: 5%; font-size: large;">Película:&nbsp;</label><label><?php echo $sentencia->fields('nombre');?></label><br><br>
+    <input type="hidden" id="nombrePelicula" name="nombrePelicula" value="<?php echo $sentencia->fields('nombre');?>">
     <label style="padding-left: 5%; font-size: large;">Duración:&nbsp; </label><label><?php echo $sentencia->fields('duracion');?></label><br><br>
     <label style="padding-left: 5%; font-size: large;">Género:&nbsp; </label><label><?php echo $sentencia->fields('genero');?></label><br><br>
     <label style="padding-left: 5%; font-size: large;">Clasificación:&nbsp; </label><label> <?php echo $sentencia->fields('clasificacion');?></label><br><br>
     <label style="padding-left: 5%; font-size: large;">Formato:&nbsp; </label><label><?php echo $sentencia->fields('formato');?></label><br><br>
     <label style="padding-left: 5%; font-size: large;">Horario&nbsp;&nbsp;</label>
-    <select id="horario" name="horario" style="color: black;" >
+    <select id="horario" name="horario" style="color: black;" onchange="comprar();" >
         <option value="">Horarios disponibles</option>
        <?php
             if (!$conn) {

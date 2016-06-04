@@ -62,12 +62,28 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo strtoupper($_SESSION['usuario']); ?><strong class="caret"></strong></a>
                             <ul class="dropdown-menu">
+                                <?php if ($_SESSION['idAutorizacion']=='0'){ ?>
                                 <li>
-                                    <a href="cambiar_contrasena.php"><i class="fa fa-lock"></i> Cambiar Contrase&ntilde;a</a>
+                                    <a href="registrar_usuario.php"><i class="fa fa-user-plus"></i> Registrar Usuario</a>
                                 </li>
+                                <li>
+                                    <a href="modificar_usuario.php"><i class="fa fa-users"></i> Modificar Usuario</a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <?php } ?>
                                 <li>
                                     <a href="registrar_pelicula.php"><i class="fa fa-film"></i> Registrar Pel&iacute;cula</a>
                                 </li>
+                                <li>
+                                    <a href="modificar_pelicula.php"><i class="fa fa-pencil"></i> Modificar Pel&iacute;cula</a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <li>
+                                    <a href="cambiar_contrasena.php"><i class="fa fa-lock"></i> Cambiar Contrase&ntilde;a</a>
+                                </li>
+
                                 <li>
                                     <a href="cerrar_sesion.php"><i class="fa fa-sign-out"></i> Cerrar Sesi&oacute;n</a>
                                 </li>

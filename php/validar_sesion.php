@@ -6,7 +6,7 @@
          $swap=$key;
          $$swap=$value;
         }
-    $sql="select usuario from admin where usuario='$usuario' and contrasena='$contrasena'";
+    $sql="select usuario, idAutorizacion from admin where usuario='$usuario' and contrasena='$contrasena'";
     $sentencia=$db->Execute($sql);
      
     if($sentencia->fields('usuario')==""){
@@ -19,6 +19,7 @@
     else{
         session_start();
         $_SESSION['usuario']=$sentencia->fields('usuario');
+        $_SESSION['idAutorizacion']=$sentencia->fields('idAutorizacion');
         ?>
         <script type="text/javascript">
             window.location="administrador_menu.php"
