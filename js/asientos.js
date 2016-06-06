@@ -2,6 +2,7 @@ var blanco='http://localhost/img/asientonn.png';
 var verde='http://localhost/img/asientov.png';
 var rojo='http://localhost/img/asientou.png';
 var contador=0;
+var asientos=[];
 function taquito(element){
     if(element.src!=rojo) {
         if (element.src == verde) {
@@ -12,6 +13,10 @@ function taquito(element){
             }
             else{
                 document.getElementById('pagar').disabled=false;
+                var el=element.getAttribute("name");
+                alert(el);
+                asientos[contador]=el;
+                alert(asientos[contador]);
             }
         }else{
             element.src=verde;

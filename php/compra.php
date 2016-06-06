@@ -92,7 +92,7 @@ require_once('../html/footer-comun.html');
                 <td><?php echo $_SESSION['pelicula'];?></td>
                 <td><?php echo $_SESSION['horario'];?></td>
                 <td><?php echo $_SESSION['boletos'];?></td>
-                <td><?php echo $pass;?></td>
+                <td><?php echo $_SESSION['codigo'];?></td>
                 <td><img width="150px" src="<?php echo $_SESSION['poster'];?>"></td>
 
             </tr>

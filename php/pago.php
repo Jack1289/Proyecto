@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once('../html/footer-comun.html');
     if(isset($_POST['comprar'])){
         $chars = "abcdefghijkmnopqrstuvwxyz023456789";
         srand((double)microtime()*1000000);
@@ -11,7 +12,12 @@
             $tmp = substr($chars, $num, 1);
             $pass = $pass . $tmp;
             $i++;
+            if($i==7){
+                $cod=$pass;
+                $_SESSION['codigo']=$pass;
+            }
         }
+
         require_once('conexion-adodb.php');
         $pelicula=$_SESSION['pelicula'];
         $horario=$_SESSION['horario'];
@@ -22,11 +28,11 @@
             $swap=$key;
             $$swap=$value;
         }
-        $sql = "insert into compra values (0,'$pelicula','$horario','$boleto','$pass',NOW());";
+        $sql = "insert into compra values (0,'$pelicula','$horario','$boleto','$cod',NOW());";
         $result = mysqli_query($conn, $sql);
         if ($result == true) {?>
             <script type="text/javascript">
-            window.location="compra.php"
+            //window.location="compra.php"
                 </script><?php
         } else {
 
@@ -119,13 +125,13 @@
             <br>
 
 
-            <button type="submit" id="comprar" name="comprar" class="btn btn-success" onclick="//verificarContrasena();"><i class="fa fa-ticket"></i> Comprar</button>
+            <button type="submit" id="comprar" name="comprar" class="btn btn-success" onclick="pagar();return false;"><i class="fa fa-ticket"></i> Comprar</button>
 
 
         </form>
     </div>
 </center>
-
+<script src="../js/pago.js"></script>
 <script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/scripts.js"></script>

@@ -91,10 +91,10 @@
     <img  onclick="taquito(this);" src="<?php echo $arr[0]['src']; ?>" width="50" style="float: left; padding-left: .5%">
 </div>
 <div>
-    <img onclick="taquito(this);" src="<?php echo $arr[1]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
+    <img name="A1" onclick="taquito(this);" src="<?php echo $arr[1]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
 </div>
 <div>
-    <img onclick="taquito(this);" src="<?php echo $arr[2]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
+    <img name="A2" onclick="taquito(this);" src="<?php echo $arr[2]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
 </div>
 <div>
     <img onclick="taquito(this);" src="<?php echo $arr[3]['src']; ?>" width="50"  style="float: left; padding-left: .5%">
