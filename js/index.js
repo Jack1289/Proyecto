@@ -44,6 +44,54 @@ function hola4() {
 
 
 }
+function hola5() {
+    $.post("../php/var.php",
+        {
+            idPelicula: "5"
+        },
+        function(data, status){
+            window.location="../php/boruto.php"
+        });
+
+
+
+}
+function hola6() {
+    $.post("../php/var.php",
+        {
+            idPelicula: "6"
+        },
+        function(data, status){
+            window.location="../php/boruto.php"
+        });
+
+
+
+}
+function hola7() {
+    $.post("../php/var.php",
+        {
+            idPelicula: "7"
+        },
+        function(data, status){
+            window.location="../php/boruto.php"
+        });
+
+
+
+}
+function hola8() {
+    $.post("../php/var.php",
+        {
+            idPelicula: "8"
+        },
+        function(data, status){
+            window.location="../php/boruto.php"
+        });
+
+
+
+}
 function comprar(){
     var horario=$('#horario').val();
     var pelicula=$('#nombrePelicula').val();

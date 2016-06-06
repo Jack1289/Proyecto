@@ -56,32 +56,47 @@
     </div>
 </div>
 
+
 <div>
-    <img src="../img/boruto.jpg" width="450px" height="520" style="float: left; padding-left: 5%" >
+    <a href="#" onClick="hola();"><img src="../img/boruto.jpg" alt="Boruto" width="450px" height="520" style="float: left; padding-left: 5%"></a>
 </div>
 <div>
-    <img src="../img/alicia.jpg" width="450px"  height="520" style="float: left; padding-left: 5%" >
+    <a href="#" onClick="hola2();"><img src="../img/xmen.jpg" alt="xmen"  width="450px"  height="520" style="float: left; padding-left: 5%"></a>
 </div>
+
 <div>
-    <img src="../img/animales-fantasticos.jpg" width="450px"  height="520" style="float: left; padding-left: 5%" >
+    <a href="#" onClick="hola4();"><img src="../img/suicide.jpg" alt="suicide" width="450px"  height="520" style="float: left; padding-left: 5%" ></a>
 </div>
+
 <div>
-    <img src="../img/warcraft.jpg" width="450px"  height="520" style="float: left; padding-left: 5%" >
+    <a href="#" onClick="hola3();"><img src="../img/animales.jpg" alt="animales" width="450px"  height="520" style="float: left; padding-left: 5%""></a>
 </div>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 <div>
-    <img src="../img/xmen.jpg" width="450px"  height="520" style="float: left; padding-left: 5%" >
+    <a href="#" onClick="hola5();"><img src="../img/alicia.jpg" alt="alicia" width="450px" height="520" style="float: left; padding-left: 5%"></a>
 </div>
 <div>
-    <img src="../img/vecinos.jpg" width="450px"  height="520" style="float: left; padding-left: 5%" >
+    <a href="#" onClick="hola6();"><img src="../img/warcraft.jpg" alt="war"  width="450px"  height="520" style="float: left; padding-left: 5%"></a>
 </div>
+
 <div>
-    <img src="../img/suicide.jpg" width="450px"  height="520" style="float: left; padding-left: 5%" >
+    <a href="#" onClick="hola7();"><img src="../img/vecinos.jpg" alt="vecinos" width="450px"  height="520" style="float: left; padding-left: 5%" ></a>
 </div>
+
 <div>
-    <img src="../img/dory.jpg" width="450px"  height="520" style="float: left; padding-left: 5%" >
+    <a href="#" onClick="hola8();"><img src="../img/dory.jpg" alt="dory" width="450px"  height="520" style="float: left; padding-left: 5%""></a>
 </div>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -135,6 +150,7 @@
         <input type="submit" value="Guardar" />
     </fieldset>
 </form>-->
+<script src="../js/index.js"></script>
 <script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/scripts.js"></script>
