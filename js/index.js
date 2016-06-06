@@ -7,6 +7,43 @@ function hola() {
             window.location="../php/boruto.php"
         });
 }
+function hola2() {
+    $.post("../php/var.php",
+        {
+            idPelicula: "2"
+        },
+        function(data, status){
+            window.location="../php/boruto.php"
+        });
+
+
+
+}
+
+function hola3() {
+    $.post("../php/var.php",
+        {
+            idPelicula: "3"
+        },
+        function(data, status){
+            window.location="../php/boruto.php"
+        });
+
+
+
+}
+function hola4() {
+    $.post("../php/var.php",
+        {
+            idPelicula: "4"
+        },
+        function(data, status){
+            window.location="../php/boruto.php"
+        });
+
+
+
+}
 function comprar(){
     var horario=$('#horario').val();
     var pelicula=$('#nombrePelicula').val();
