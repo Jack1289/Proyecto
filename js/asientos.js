@@ -6,7 +6,7 @@ function taquito(element){
     if(element.src!=rojo) {
         if (element.src == verde) {
             element.src=blanco;
-            contador=contador-1;
+            contador=contador+1;
             if(contador==0){
                 document.getElementById('pagar').disabled=true;
             }
@@ -15,7 +15,7 @@ function taquito(element){
             }
         }else{
             element.src=verde;
-            contador=contador+1;
+            contador=contador-1;
             if(contador==0){
                 document.getElementById('pagar').disabled=true;
             }

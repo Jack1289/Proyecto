@@ -81,6 +81,7 @@ require_once('../html/footer-comun.html');
                                 <li>
                                     <a href="modificar_usuario.php"><i class="fa fa-users"></i> Modificar Usuario</a>
                                 </li>
+
                                 <li class="divider">
                                 </li>
                                 <?php } ?>
@@ -91,6 +92,9 @@ require_once('../html/footer-comun.html');
                                     <a href="modificar_pelicula.php"><i class="fa fa-pencil"></i> Modificar Pel&iacute;cula</a>
                                 </li>
                                 <li class="divider">
+                                </li>
+                                <li>
+                                    <a href="test.php"><i class="fa fa-book"></i> Informacion de Ventas</a>
                                 </li>
                                 <li>
                                     <a href="cambiar_contrasena.php"><i class="fa fa-lock"></i> Cambiar Contrase&ntilde;a</a>
@@ -108,42 +112,7 @@ require_once('../html/footer-comun.html');
         </div>
     </div>
 </div>
-<div class="form-group"  style="width: 100%; color: white;padding-left: 10%;padding-top: 2%;padding-right: 10%; " align="center" >
 
-    <!--<label>Inicio<?php //echo $_SESSION['boletos']; ?></label>-->
-    <center>
-<table id="myTable" class="table table-condensed text-center"  align="center" style="color: white;">
-    <thead>
-    <tr>
-        <th class="text-center">Pel&iacute;cula</th>
-        <th class="text-center">Horario y Sala</th>
-        <th class="text-center">Boletos</th>
-        <th class="text-center">C&oacute;digo</th>
-        <th class="text-center"></th>
-    </tr>
-    </thead>
-    <tr>
-    <td><?php echo $_SESSION['pelicula'];?></td>
-    <td><?php echo $_SESSION['horario'];?></td>
-    <td><?php echo $_SESSION['boletos'];?></td>
-        <td><?php echo $pass;?></td>
-    <td><img width="150px" src="<?php echo $_SESSION['poster'];?>"></td>
-
-    </tr>
-
-</table>
-
-        <button type="submit" id="guardar" name="guardar" class="btn btn-success" onclick="imprimir();"><i class="fa fa-print"></i> Imprimir</button>
-    </div>
-
-</center>
-<script type="text/javascript" >
-
-
-    function imprimir(){
-        window.print();
-    }
-</script>
 <script src='//cdn.datatables.net/buttons/1.1.2/css/buttons.dataTables.min.css'></script>
 <script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>

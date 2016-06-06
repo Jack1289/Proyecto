@@ -24,8 +24,10 @@
         }
         $sql = "insert into compra values (0,'$pelicula','$horario','$boleto','$pass',NOW());";
         $result = mysqli_query($conn, $sql);
-        if ($result == true) {
-
+        if ($result == true) {?>
+            <script type="text/javascript">
+            window.location="compra.php"
+                </script><?php
         } else {
 
         }
@@ -103,7 +105,7 @@
 
         </div><img src="<?php echo $_SESSION['poster']; ?>" alt="Boruto" width="280px" style="float: left; position: absolute; left: 10%; top: 20%; "><br><br>
     <div class="form-group"  style="width: 30%; color: white; margin-left: 5%;" align="center">
-        <form id="registrarUsuario" name="registrarUsuario" method="post" action="administrador_menu.php">
+        <form id="registrarUsuario" name="registrarUsuario" method="post" >
             <label >N&uacute;mero de tarjeta:</label>
             <input type="text" class="form-control" id="usuario" name="usuario" style="text-align: center; text-transform: uppercase;" maxlength="30" autofocus="true"  required/>
             <br>
