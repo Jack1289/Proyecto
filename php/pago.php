@@ -1,19 +1,28 @@
 <?php
-session_start();
-if(isset($_SESSION['usuario'])){
-    if(isset($_POST['guardar'])){
+    session_start();
+    if(isset($_POST['comprar'])){
+        $chars = "abcdefghijkmnopqrstuvwxyz023456789";
+        srand((double)microtime()*1000000);
+        $i = 0;
+        $pass = '' ;
+
+        while ($i <= 7) {
+            $num = rand() % 33;
+            $tmp = substr($chars, $num, 1);
+            $pass = $pass . $tmp;
+            $i++;
+        }
         require_once('conexion-adodb.php');
-        $usuario=$_POST['usuario'];
-        $contrasena=$_POST['contrasena'];
-        $nombre=$_POST['nombre'];
-        $paterno=$_POST['paterno'];
-        $materno=$_POST['materno'];
+        $pelicula=$_SESSION['pelicula'];
+        $horario=$_SESSION['horario'];
+        $boleto=$_SESSION['boletos'];
+
 
         foreach($_POST as $key=>$value){
             $swap=$key;
             $$swap=$value;
         }
-        $sql = "insert into admin values (0,'$usuario','$contrasena','$nombre','$paterno','$materno','1');";
+        $sql = "insert into compra values (0,'$pelicula','$horario','$boleto','$pass',NOW());";
         $result = mysqli_query($conn, $sql);
         if ($result == true) {
 
@@ -22,13 +31,7 @@ if(isset($_SESSION['usuario'])){
         }
         mysqli_close($conn);
     }
-}else{
-    ?>
-    <script type="text/javascript">
-        window.location="iniciar_sesion.php"
-    </script>
-    <?php
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,19 +82,8 @@ if(isset($_SESSION['usuario'])){
                         </button>
                     </form>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo strtoupper($_SESSION['usuario']); ?><strong class="caret"></strong></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="administrador_menu.php"><i class="fa fa-home"></i> Inicio</a>
-                                </li>
-                                <li>
-                                    <a href="cambiar_contrasena.php"><i class="fa fa-lock"></i> Cambiar Contrase&ntilde;a</a>
-                                </li>
-                                <li>
-                                    <a href="cerrar_sesion.php"><i class="fa fa-sign-out"></i> Cerrar Sesi&oacute;n</a>
-                                </li>
-                            </ul>
+                        <li>
+                            <a href="administrador_menu.php">Iniciar Sesi&oacute;n</a>
                         </li>
                     </ul>
                 </div>
@@ -111,7 +103,7 @@ if(isset($_SESSION['usuario'])){
 
         </div><img src="<?php echo $_SESSION['poster']; ?>" alt="Boruto" width="280px" style="float: left; position: absolute; left: 10%; top: 20%; "><br><br>
     <div class="form-group"  style="width: 30%; color: white; margin-left: 5%;" align="center">
-        <form id="registrarUsuario" name="registrarUsuario" method="post">
+        <form id="registrarUsuario" name="registrarUsuario" method="post" action="administrador_menu.php">
             <label >N&uacute;mero de tarjeta:</label>
             <input type="text" class="form-control" id="usuario" name="usuario" style="text-align: center; text-transform: uppercase;" maxlength="30" autofocus="true"  required/>
             <br>
@@ -125,7 +117,7 @@ if(isset($_SESSION['usuario'])){
             <br>
 
 
-            <button type="submit" id="guardar" name="guardar" class="btn btn-success" onclick="//verificarContrasena();"><i class="fa fa-ticket"></i> Comprar</button>
+            <button type="submit" id="comprar" name="comprar" class="btn btn-success" onclick="//verificarContrasena();"><i class="fa fa-ticket"></i> Comprar</button>
 
 
         </form>

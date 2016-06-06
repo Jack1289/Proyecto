@@ -28,44 +28,46 @@
 
 
 
-    <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<nav class="navbar navbar-default" role="navigation">
-				<div class="navbar-header">
-					 
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-					</button> <a class="navbar-brand" href="../index.php">Cinemas Delicias</a>
-				</div>
-				
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
+  <div class="container-fluid">
+	  <div class="row">
+		  <div class="col-md-12">
+			  <nav class="navbar navbar-default" style="" role="navigation">
+				  <div class="navbar-header">
 
-						<li>
-							<a href="php/pelicula.php">CARTELERA</a>
-						</li>
+					  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						  <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+					  </button> <a class="navbar-brand" href="../index.php">Cinemas Delicias</a>
+				  </div>
 
-					</ul>
-					<form class="navbar-form navbar-left" role="search">
-						<div class="form-group">
-							<input type="text" class="form-control">
-						</div>
-						<button type="submit" class = "btn btn-default" ><i class="fa fa-search" aria-hidden="true"></i>
-							Submit
-						</button>
-					</form>
-					<ul class="nav navbar-nav navbar-right">
-						<li>
-							<a href="php/iniciar_sesion.php">Iniciar Sesi&oacute;n</a>
-						</li>
-					</ul>
-				</div>
-				
-			</nav>
-		</div>
-	</div>
-</div>
+				  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					  <ul class="nav navbar-nav">
+
+						  <li>
+							  <a href="../php/pelicula.php">Cartelera</a>
+						  </li>
+
+					  </ul>
+					  <form class="navbar-form navbar-left" role="search">
+						  <div class="form-group">
+							  <input type="text" class="form-control">
+						  </div>
+
+
+						  <button type="submit" class = "btn btn-default" ><i class="fa fa-search" aria-hidden="true"></i>
+							  Buscar
+						  </button>
+					  </form>
+					  <ul class="nav navbar-nav navbar-right">
+						  <li>
+							  <a href="administrador_menu.php">Iniciar Sesi&oacute;n</a>
+						  </li>
+					  </ul>
+				  </div>
+
+			  </nav>
+		  </div>
+	  </div>
+  </div>
     <center>
 	<div  style="width: 10%; color: white; margin-top: 12%;" align="center">
 	  <form id="formularioSesion" method="POST" action="validar_sesion.php">

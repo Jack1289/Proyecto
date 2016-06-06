@@ -1,5 +1,7 @@
 <?php
     session_start();
+require_once('../html/header-comun.html');
+require_once('../html/footer-comun.html');
     if(isset($_SESSION['usuario'])){
         $bandera=0;
         require_once('../html/header-comun.html');
