@@ -81,6 +81,7 @@
 </div>
 <font color="white">
     <label style="padding-left: 5%; font-size: large;">Película:&nbsp;</label><label><?php echo $sentencia->fields('nombre');?></label><br><br>
+    <input type="hidden" name="sala" value="<?php echo $_SESSION['sala'];?>"
     <input type="hidden" id="nombrePelicula" name="nombrePelicula" value="<?php echo $sentencia->fields('nombre');?>">
     <label style="padding-left: 5%; font-size: large;">Duración:&nbsp; </label><label><?php echo $sentencia->fields('duracion');?></label><br><br>
     <label style="padding-left: 5%; font-size: large;">Género:&nbsp; </label><label><?php echo $sentencia->fields('genero');?></label><br><br>

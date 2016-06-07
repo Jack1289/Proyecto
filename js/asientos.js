@@ -15,8 +15,8 @@ function taquito(element){
                 document.getElementById('pagar').disabled=false;
                 var el=element.getAttribute("name");
                 alert(el);
-                asientos[contador]=el;
-                alert(asientos[contador]);
+                asientos[contador-1]=el;
+                alert(asientos);
             }
         }else{
             element.src=verde;
@@ -33,7 +33,7 @@ function taquito(element){
 function comprar(){
     BootstrapDialog.confirm({
         title: 'Compra de Boletos',
-        message: 'Usted va a comprar '+contador+' boletos. ¿Está seguro?',
+        message: 'Usted va a comprar los asientos'+asientos+'. ¿Está seguro?',
         type: BootstrapDialog.TYPE_WARNING, // <-- Default value is BootstrapDialog.TYPE_PRIMARY
         closable: true, // <-- Default value is false
         draggable: true, // <-- Default value is false
@@ -45,7 +45,8 @@ function comprar(){
             if(result) {
                 $.post("../php/var2.php",
                     {
-                        boletos:contador
+                        boletos:contador,
+                        asientos:asientos.toString()
                     },
                     function(data, status){
                         window.location="pago.php"

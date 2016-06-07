@@ -30,9 +30,17 @@
         }
         $sql = "insert into compra values (0,'$pelicula','$horario','$boleto','$cod',NOW());";
         $result = mysqli_query($conn, $sql);
-        if ($result == true) {?>
-            <script type="text/javascript">
+        if ($result == true){
+$sql1 = "update asientos set src='../img/asientou.png' where idAsiento='2'";
+$result = mysqli_query($conn,$sql1);
+?>
+
+
+
+            <!-- <script type="text/javascript">
             //window.location="compra.php"
+
+
                 </script><?php
         } else {
 
@@ -105,7 +113,7 @@
 
         <label style="font-size: larger; color: white;">Pagar Boleto</label><br><br><br>
         <div style="padding-left: 2%;" >
-            <label style="color: white;font-size: large;">Pel&iacute;cula:&nbsp;&nbsp;</label><label style="color: white;"> <?php echo $_SESSION['pelicula']; ?></label><br>
+            <label style="color: white;font-size: large;">Pel&iacute;cula:&nbsp;&nbsp;</label><label style="color: white;"> <?php echo $_SESSION['asientos'].$_SESSION['pelicula']; ?></label><br>
             <label style="color: white;font-size: large;">Horario:&nbsp;&nbsp;</label><label style="color: white;"><?php echo $_SESSION['horario']; ?></label><br>
             <label style="color: white;font-size: large;">Boletos:&nbsp;&nbsp;</label><label style="color: white;"><?php echo $_SESSION['boletos']; ?></label><br>
 

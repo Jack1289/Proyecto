@@ -10,7 +10,9 @@
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-    $sql = "SELECT src FROM asientos WHERE sala='Sala 1'";
+    $sala=$_SESSION['sala'];
+echo $sala;
+    $sql = "SELECT src FROM asientos WHERE sala='Sala1'";
     $result = mysqli_query($conn, $sql);
     $i=0;
     $arr=[];
@@ -81,7 +83,7 @@
 </div>
 <br>
 <center>
-    <label style="color: white;font-size: large;">Seleccione los asientos dando clic sobre ellos</label>
+    <label style="color: white;font-size: large;">Seleccione los asientos dando clic sobre ellos<?php echo $_SESSION['sala']; ?></label>
 </center>
 <br>
 <div style="">
