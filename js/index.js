@@ -95,17 +95,31 @@ function hola8() {
 }
 function comprar(){
     var horario=$('#horario').val();
-    var pelicula=$('#nombrePelicula').val();
+    var pelicula=$('#xx').val();
     var poster=$('#poster').val();
     var sala=$('#sala').val();
+    //alert(pelicula.toString);
     if($('#horario').val()!=0) {
         $.post("../php/var.php",
             {
                 horario: horario,
-                pelicula: pelicula,
+                peliculaphp: pelicula,
                 poster: poster,
                 sala: sala
             },
+            function(data, status){
+                window.location="../php/asientos.php"
+            });
+    }
+}
+function comprar2(){
+    var peliculas=$('#xx').val();
+    if($('#horario').val()!=0) {
+        $.post("../php/var3.php",
+            {
+
+                peliculaphp: peliculas
+                 },
             function(data, status){
                 window.location="../php/asientos.php"
             });

@@ -7,6 +7,7 @@
     $db->query("SET NAMES 'utf8'");
     $db->query("SET CHARACTER SET utf8");
     $sentencia=$db->Execute($sql);
+    $pp=$sentencia->fields('nombre');
     //$_SESSION['idPelicula']=0;
 
 ?>
@@ -80,15 +81,15 @@
 
 </div>
 <font color="white">
-    <label style="padding-left: 5%; font-size: large;">Película:&nbsp;</label><label><?php echo $sentencia->fields('nombre');?></label><br><br>
-    <input type="hidden" name="sala" value="<?php echo $_SESSION['sala'];?>"
-    <input type="hidden" id="nombrePelicula" name="nombrePelicula" value="<?php echo $sentencia->fields('nombre');?>">
+    <label style="padding-left: 5%; font-size: large;">Película:&nbsp;</label><label><?php echo $pp;?></label><br><br>
+    <input type="hidden" id="sala" name="sala" value="<?php echo $_SESSION['sala'];?>"
+    <input type="hidden" id="xx" name="xx" value="<?php echo $pp;?>">
     <label style="padding-left: 5%; font-size: large;">Duración:&nbsp; </label><label><?php echo $sentencia->fields('duracion');?></label><br><br>
     <label style="padding-left: 5%; font-size: large;">Género:&nbsp; </label><label><?php echo $sentencia->fields('genero');?></label><br><br>
     <label style="padding-left: 5%; font-size: large;">Clasificación:&nbsp; </label><label> <?php echo $sentencia->fields('clasificacion');?></label><br><br>
     <label style="padding-left: 5%; font-size: large;">Formato:&nbsp; </label><label><?php echo $sentencia->fields('formato');?></label><br><br>
     <label style="padding-left: 5%; font-size: large;">Horario&nbsp;&nbsp;</label>
-    <select id="horario" name="horario" style="color: black;" onchange="comprar();" >
+    <select id="horario" name="horario" style="color: black;" onchange="comprar();comprar2();" >
         <option value="">Horarios disponibles</option>
        <?php
             if (!$conn) {

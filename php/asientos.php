@@ -11,7 +11,7 @@
         die("Connection failed: " . mysqli_connect_error());
     }
     $sala=$_SESSION['sala'];
-echo $sala;
+echo $_SESSION['pelicula'].'o.o';
     $sql = "SELECT src FROM asientos WHERE sala='Sala1'";
     $result = mysqli_query($conn, $sql);
     $i=0;
@@ -198,7 +198,7 @@ echo $sala;
 
 </div>
     <div style="float: left; padding-left: 2%;" >
-        <label style="color: white;font-size: large;">Pel&iacute;cula:&nbsp;&nbsp;</label><label style="color: white;"> <?php echo $_SESSION['pelicula']; ?></label><br>
+        <label style="color: white;font-size: large;">Pel&iacute;cula:&nbsp;&nbsp;</label><label style="color: white;"> <?php $pp=$_SESSION['pelicula']; echo $pp; ?></label><br>
         <label style="color: white;font-size: large;">Horario:&nbsp;&nbsp;</label><label style="color: white;"><?php echo $_SESSION['horario']; ?></label><br>
         <img src="<?php echo $_SESSION['poster']; ?>" alt="Boruto" width="180px" style="float: left;position: absolute ">
     </div>

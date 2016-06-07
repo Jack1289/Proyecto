@@ -113,7 +113,7 @@ $result = mysqli_query($conn,$sql1);
 
         <label style="font-size: larger; color: white;">Pagar Boleto</label><br><br><br>
         <div style="padding-left: 2%;" >
-            <label style="color: white;font-size: large;">Pel&iacute;cula:&nbsp;&nbsp;</label><label style="color: white;"> <?php echo $_SESSION['asientos'].$_SESSION['pelicula']; ?></label><br>
+            <label style="color: white;font-size: large;">Pel&iacute;cula:&nbsp;&nbsp;</label><label style="color: white;"> <?php echo $_SESSION['pelicula']; ?></label><br>
             <label style="color: white;font-size: large;">Horario:&nbsp;&nbsp;</label><label style="color: white;"><?php echo $_SESSION['horario']; ?></label><br>
             <label style="color: white;font-size: large;">Boletos:&nbsp;&nbsp;</label><label style="color: white;"><?php echo $_SESSION['boletos']; ?></label><br>
 

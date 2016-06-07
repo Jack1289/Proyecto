@@ -8,8 +8,9 @@ session_start();
  */
 
 $_SESSION['idPelicula']=$_POST['idPelicula'];
-$_SESSION['horario']=$_POST['horario'];
-$_SESSION['pelicula']=$_POST['pelicula'];
-$_SESSION['poster']=$_POST['poster'];
 $_SESSION['sala']=$_POST['sala'];
+//////////////////////////
+$_SESSION['horario']=$_POST['horario'];
+
+$_SESSION['poster']=$_POST['poster'];
 ///var_dump($_SESSION['sala']);
