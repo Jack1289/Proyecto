@@ -20,7 +20,15 @@ function taquito(element){
             }
         }else{
             element.src=verde;
+            for(var i=0;i<asientos.length;i++)
+            {
+                if(asiento[i]==element.name.toString())
+                {
+                    asientos[i]='';
+                }
+            }
             contador=contador-1;
+
             if(contador==0){
                 document.getElementById('pagar').disabled=true;
             }

@@ -11,7 +11,8 @@ function hola() {
 function hola2() {
     $.post("../php/var.php",
         {
-            idPelicula: "2"
+            idPelicula: "2",
+            sala:"Sala2"
         },
         function(data, status){
             window.location="../php/boruto.php"

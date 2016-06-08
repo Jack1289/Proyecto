@@ -12,7 +12,7 @@
     }
     $sala=$_SESSION['sala'];
 echo $_SESSION['pelicula'].'o.o';
-    $sql = "SELECT src FROM asientos WHERE sala='Sala1'";
+    $sql = "SELECT src FROM asientos WHERE sala='$sala'";
     $result = mysqli_query($conn, $sql);
     $i=0;
     $arr=[];

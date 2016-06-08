@@ -1,1 +1,0 @@
-<?php $_SESSION['pelicula']=$_POST['peliculaphp'];
