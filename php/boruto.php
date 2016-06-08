@@ -108,7 +108,7 @@
 
             mysqli_close($conn);
        ?>
-    </select><br><br>
+    </select><br><br><br><br>
     <label style="padding-left: 5%; font-size: large;">Sinopsis:</label><br><br>
     <label  size="6" style="width: 50%; padding-left: 5%" ><?php echo $sentencia->fields('sinopsis'); ?></label>
 
