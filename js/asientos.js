@@ -20,14 +20,17 @@ function taquito(element){
             }
         }else{
             element.src=verde;
-            for(var i=0;i<asientos.length;i++)
+            var i=0
+            for(i=0;i<asientos.length;i++)
             {
-                if(asiento[i]==element.name.toString())
+                if(asientos[i]==element.name)
                 {
-                    asientos[i]='';
+                    asientos.splice(i,1);
                 }
             }
             contador=contador-1;
+
+
 
             if(contador==0){
                 document.getElementById('pagar').disabled=true;
@@ -39,6 +42,7 @@ function taquito(element){
     }
 }
 function comprar(){
+
     BootstrapDialog.confirm({
         title: 'Compra de Boletos',
         message: 'Usted va a comprar los asientos'+asientos+'. ¿Está seguro?',
@@ -54,7 +58,8 @@ function comprar(){
                 $.post("../php/var2.php",
                     {
                         boletos:contador,
-                        asientos:asientos.toString()
+                        asientos:asientos.toString(),
+
                     },
                     function(data, status){
                         window.location="pago.php"

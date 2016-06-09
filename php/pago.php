@@ -1,6 +1,12 @@
 <?php
     session_start();
+$lista=explode(",",$_SESSION['asientos']);
+$sala=$_SESSION['sala'];
+
+//echo $lista[0];
+//echo $lista[1];
     require_once('../html/footer-comun.html');
+$asientos=$_SESSION['asientos'];
     if(isset($_POST['comprar'])){
         $chars = "abcdefghijkmnopqrstuvwxyz023456789";
         srand((double)microtime()*1000000);
@@ -24,34 +30,34 @@
         $boleto=$_SESSION['boletos'];
 
 
-        foreach($_POST as $key=>$value){
+
+
+
+foreach($_POST as $key=>$value){
             $swap=$key;
             $$swap=$value;
         }
         $sql = "insert into compra values (0,'$pelicula','$horario','$boleto','$cod',NOW());";
         $result = mysqli_query($conn, $sql);
-        if ($result == true){
-$sql1 = "update asientos set src='../img/asientou.png' where idAsiento='2'";
-$result = mysqli_query($conn,$sql1);
-?>
-
-
-
-            <!-- <script type="text/javascript">
-            //window.location="compra.php"
-
-
-                </script><?php
-        } else {
-
+        if ($result == true) {
+            foreach ($lista as $valor)
+            {
+                $sql1 = "update asientos set src='../img/asientou.png' where NomAsiendo='$valor' and sala='$sala' and horario='$horario'";
+                $result = mysqli_query($conn, $sql1);
+            }
+        }
+         else {
         }
         mysqli_close($conn);
     }
-
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -116,6 +122,7 @@ $result = mysqli_query($conn,$sql1);
             <label style="color: white;font-size: large;">Pel&iacute;cula:&nbsp;&nbsp;</label><label style="color: white;"> <?php echo $_SESSION['pelicula']; ?></label><br>
             <label style="color: white;font-size: large;">Horario:&nbsp;&nbsp;</label><label style="color: white;"><?php echo $_SESSION['horario']; ?></label><br>
             <label style="color: white;font-size: large;">Boletos:&nbsp;&nbsp;</label><label style="color: white;"><?php echo $_SESSION['boletos']; ?></label><br>
+            <label style="color: white;font-size: large;">Asientos:&nbsp;&nbsp;</label><label style="color: white;"><?php echo $_SESSION['asientos']; ?></label><br>
 
         </div><img src="<?php echo $_SESSION['poster']; ?>" alt="Boruto" width="280px" style="float: left; position: absolute; left: 10%; top: 20%; "><br><br>
     <div class="form-group"  style="width: 30%; color: white; margin-left: 5%;" align="center">
@@ -132,13 +139,15 @@ $result = mysqli_query($conn,$sql1);
             <input type="text" class="form-control" id="nombre" name="nombre" style="text-align: center;" maxlength="50" required />
             <br>
 
-
+<input type="hidden" id="variable" value="<?php echo $asientos?>">
             <button type="submit" id="comprar" name="comprar" class="btn btn-success" onclick="pagar();return false;"><i class="fa fa-ticket"></i> Comprar</button>
 
 
         </form>
     </div>
 </center>
+<script type="text/javascript">
+</script>
 <script src="../js/pago.js"></script>
 <script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>

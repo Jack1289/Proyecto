@@ -1,3 +1,4 @@
+var rojo='../img/asientou.png';
 function pagar(){
    /* BootstrapDialog.confirm({
         title: 'Compra de Boletos',
@@ -43,4 +44,22 @@ function pagar(){
     });
     return false;
 
+}
+function separar(){
+    var el =document.getElementById('variable').value;
+    var as;
+    as=el.split(",");
+    var i=0;
+    //for(i=0;i<as.length;i++)
+    //{
+      //  alert(as[i]);
+   // }
+    $.post("../php/var4.php",
+        {
+            as:as
+        },
+        function(data, status){
+           window.location="../php/compra.php"
+        });
+   // return false;
 }
