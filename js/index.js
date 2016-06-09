@@ -12,6 +12,7 @@ function hola2() {
     $.post("../php/var.php",
         {
             idPelicula: "2",
+            pelicula:"BORUTO THE MOVIE",
             sala:"Sala2"
         },
         function(data, status){
@@ -106,7 +107,8 @@ function comprar(){
                 horario: horario,
                 peliculaphp: pelicula,
                 poster: poster,
-                sala: sala
+                sala: sala,
+                horario:horario
             },
             function(data, status){
                 window.location="../php/asientos.php"

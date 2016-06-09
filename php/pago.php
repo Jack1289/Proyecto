@@ -42,7 +42,7 @@ foreach($_POST as $key=>$value){
         if ($result == true) {
             foreach ($lista as $valor)
             {
-                $sql1 = "update asientos set src='../img/asientou.png' where NomAsiendo='$valor' and sala='$sala'";
+                $sql1 = "update asientos set src='../img/asientou.png' where NomAsiendo='$valor' and sala='$sala' and horario='$horario'";
                 $result = mysqli_query($conn, $sql1);
             }
         }
@@ -140,7 +140,7 @@ foreach($_POST as $key=>$value){
             <br>
 
 <input type="hidden" id="variable" value="<?php echo $asientos?>">
-            <button type="submit" id="comprar" name="comprar" class="btn btn-success" onclick="pagar();"><i class="fa fa-ticket"></i> Comprar</button>
+            <button type="submit" id="comprar" name="comprar" class="btn btn-success" onclick="pagar();return false;"><i class="fa fa-ticket"></i> Comprar</button>
 
 
         </form>

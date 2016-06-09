@@ -11,8 +11,9 @@
         die("Connection failed: " . mysqli_connect_error());
     }
     $sala=$_SESSION['sala'];
-echo $_SESSION['pelicula'].'o.o';
-    $sql = "SELECT src FROM asientos WHERE sala='$sala'";
+    $horario=$_SESSION['horario'];
+
+    $sql = "SELECT src FROM asientos WHERE sala='$sala' and horario='$horario'";
     $result = mysqli_query($conn, $sql);
     $i=0;
     $arr=[];
@@ -84,7 +85,7 @@ echo $_SESSION['pelicula'].'o.o';
 </div>
 <br>
 <center>
-    <label style="color: white;font-size: large;">Seleccione los asientos dando clic sobre ellos<?php echo $_SESSION['sala']; ?></label>
+    <label style="color: white;font-size: large;">Seleccione los asientos dando clic sobre ellos</label>
 </center>
 <br>
 <div style="">
