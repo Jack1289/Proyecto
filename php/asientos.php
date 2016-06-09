@@ -20,6 +20,7 @@ echo $_SESSION['pelicula'].'o.o';
        $arr[$i]=$row;
         $i=$i+1;
     }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,7 +91,7 @@ echo $_SESSION['pelicula'].'o.o';
 <div style="padding-left: 18%">
 
 <div>
-    <img  onclick="taquito(this);" src="<?php echo $arr[0]['src']; ?>" width="50" style="float: left; padding-left: .5%">
+    <img name="A0" onclick="taquito(this);" src="<?php echo $arr[0]['src']; ?>" width="50" style="float: left; padding-left: .5%">
 </div>
 <div>
     <img name="A1" onclick="taquito(this);" src="<?php echo $arr[1]['src']; ?>" width="50"  style="float: left; padding-left: .5%">

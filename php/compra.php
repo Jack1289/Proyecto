@@ -14,6 +14,12 @@ require_once('../html/footer-comun.html');
         $i++;
     }
 
+//var_dump($_SESSION['lugar']);
+//if(($_SESION['lugar']!=null)){
+  //  foreach($_SESSION['lugar'] as $clave){
+   //     echo $clave;
+    //}
+//}
 ?>
 <!DOCTYPE html>
 <html lang="en">

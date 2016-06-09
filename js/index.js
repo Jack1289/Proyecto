@@ -119,7 +119,8 @@ function comprar2(){
         $.post("../php/var3.php",
             {
 
-                peliculaphp: peliculas
+                peliculaphp: peliculas,
+                horario:horario
                  },
             function(data, status){
                 window.location="../php/asientos.php"

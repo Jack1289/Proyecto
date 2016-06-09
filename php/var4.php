@@ -1,0 +1,1 @@
+<?php  $_SESSION['lugar']=$_POST['as']?>
