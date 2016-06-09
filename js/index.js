@@ -25,7 +25,8 @@ function hola2() {
 function hola3() {
     $.post("../php/var.php",
         {
-            idPelicula: "3"
+            idPelicula: "3",
+            sala:"Sala3"
         },
         function(data, status){
             window.location="../php/boruto.php"
@@ -37,7 +38,8 @@ function hola3() {
 function hola4() {
     $.post("../php/var.php",
         {
-            idPelicula: "4"
+            idPelicula: "4",
+            sala:"Sala4 "
         },
         function(data, status){
             window.location="../php/boruto.php"

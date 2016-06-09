@@ -1,7 +1,44 @@
 <?php
 session_start();
 if(isset($_SESSION['usuario'])){
+    require_once('conexion-adodb.php');
+    if(isset($_POST['buscar'])){
 
+
+        foreach($_POST as $key=>$value){
+            $swap=$key;
+            $$swap=$value;
+        }
+        $gato=$_POST['nom'];
+        $sql2 = "select * from peliculas where nombre='$gato'";
+        $result2=$db->Execute($sql2);
+
+    }
+    if(isset($_POST['guardar'])) {
+
+
+        $nombre = $_POST['pelicula'];
+        $duracion = $_POST['duracion'];
+        $genero = $_POST['genero'];
+        $clasificacion = $_POST['clasificacion'];
+        $formato = $_POST['formato'];
+        $sinopsis = $_POST['sinopsis'];
+        $trailer = $_POST['trailer'];
+        $poser = $_POST['poster'];
+        $gato=$_POST['pelicula'];
+        foreach ($_POST as $key => $value) {
+            $swap = $key;
+            $$swap = $value;
+        }
+        $sql = "update peliculas set nombre='$nombre', duracion='$duracion', genero='$genero', clasificacion='$clasificacion', formato='$formato', sinopsis='$sinopsis', trailer='$trailer', poster='$poser' where nombre='$gato'";
+        $result = mysqli_query($conn, $sql);
+        if ($result == true) {
+
+        } else {
+
+        }
+        mysqli_close($conn);
+    }
 }else{
     ?>
     <script type="text/javascript">
@@ -80,40 +117,96 @@ if(isset($_SESSION['usuario'])){
         </div>
     </div>
 </div>
+<form method="post">
 
+<select id="nom" name="nom" style="color: black;" onchange="//buscar();" >
+    <option value="">Usuarios</option>
+    <?php
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    $sql = "SELECT nombre FROM peliculas";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        while($row = mysqli_fetch_assoc($result)) {
+            ?><option value="<?php echo $row["nombre"] ?>"><?php echo $row["nombre"] ?></option> <?php
+        }
+    } else {
+        ?><option value=""><?php echo "No hay usuarios disponibles" ?></option> <?php
+    }
+
+    mysqli_close($conn);
+    ?>
+</select>
+
+    <button type="submit" id="buscar" name="buscar" class="btn btn-success" onclick="//verificarContrasena();"><i class="fa fa-search"></i> Buscar</button>
+</form>
 
 <div class="form-group"  style="width: 50%; color: white; margin-left: 5%;" align="center">
-    <form id="cambiarCartelera" name="cambiarCartelera">
+    <form id="cambiarCartelera" name="cambiarCartelera" method="post">
 
 
         <label >Pelìcula:</label>
-        <input type="text" class="form-control" id="nom_pelicula" name="nom_pelicula" style="text-align: center; text-transform: uppercase;" maxlength="30" autofocus="true"  />
+        <input type="text" class="form-control" id="pelicula" name="pelicula" style="text-align: center;" maxlength="30" autofocus="true"
+               value="<?php
+        if(isset($_POST['buscar']))
+            echo $result2->fields('nombre'); ?>"
+        />
         <br>
 
         <label >Duración:</label>
-        <input type="text" class="form-control form-inline " id="peli_duracion" name="peli_duracion" style="text-align: center;" maxlength="12" />
+        <input type="text" class="form-control form-inline " id="duracion" name="duracion" style="text-align: center;" maxlength="12"
+        value="<?php
+        if(isset($_POST['buscar']))
+            echo $result2->fields('duracion'); ?>"/>
         <br>
 
         <label>Género:</label>
-        <input type="text" class="form-control" id="peli_genero" name="peli_genero" style="text-align: center;" maxlength="50" />
+        <input type="text" class="form-control" id="genero" name="genero" style="text-align: center;" maxlength="50"
+               value="<?php
+        if(isset($_POST['buscar']))
+            echo $result2->fields('genero'); ?>"/>
         <br>
 
         <label> Clasificación:</label>
-        <input type="text" class="form-control" id="peli_clasificacion" name="peli_clasificacion" style="text-align: center;" maxlength="10" />
+        <input type="text" class="form-control" id="clasificacion" name="clasificacion" style="text-align: center;" maxlength="10"
+               value="<?php
+        if(isset($_POST['buscar']))
+            echo $result2->fields('clasificacion'); ?>"/>
         <br>
 
         <label>Formato:</label>
-        <input type="text" class="form-control" id="peli_formato" name="peli_formato" style="text-align: center;" maxlength="10" />
+        <input type="text" class="form-control" id="formato" name="formato" style="text-align: center;" maxlength="10"
+               value="<?php
+        if(isset($_POST['buscar']))
+            echo $result2->fields('formato'); ?>"/>
         <br>
 
         <label>Sinopsis:</label>
 
-            <textarea class="form-control"  id="peli_sinopsis" name="peli_sinopsis" style="text-align: center;" maxlength="500" rows="10" cols="220">
+            <textarea class="form-control"  id="sinopsis" name="sinopsis" style="text-align: center;" maxlength="500" rows="10" cols="220"
+                      >
+                <?php
+                if(isset($_POST['buscar']))
+                    echo $result2->fields('sinopsis'); ?>
 
             </textarea>
         <br>
+        <label>Trailer:</label>
+        <input type="text" class="form-control" id="trailer" name="trailer" style="text-align: center;" maxlength="100"
+               value="<?php
+               if(isset($_POST['buscar']))
+                   echo $result2->fields('trailer'); ?>"/>
+        <br>
+        <label>Poster:</label>
+        <input type="text" class="form-control" id="poster" name="poster" style="text-align: center;" maxlength="100"
+               value="<?php
+               if(isset($_POST['buscar']))
+                   echo $result2->fields('poster'); ?>"/>
 
-
+        <br>
+        <button type="submit" id="guardar" name="guardar" class="btn btn-success" onclick="//verificarContrasena();"><i class="fa fa-floppy-o"></i> Guardar</button>
 
 
         <br>
