@@ -1,18 +1,17 @@
 <?php
     session_start();
-$lista=explode(",",$_SESSION['asientos']);
-$sala=$_SESSION['sala'];
+    $lista=explode(",",$_SESSION['asientos']);
+    $sala=$_SESSION['sala'];
 
-//echo $lista[0];
-//echo $lista[1];
+    //echo $lista[0];
+    //echo $lista[1];
     require_once('../html/footer-comun.html');
-$asientos=$_SESSION['asientos'];
+    $asientos=$_SESSION['asientos'];
     if(isset($_POST['comprar'])){
         $chars = "abcdefghijkmnopqrstuvwxyz023456789";
         srand((double)microtime()*1000000);
         $i = 0;
         $pass = '' ;
-
         while ($i <= 7) {
             $num = rand() % 33;
             $tmp = substr($chars, $num, 1);
@@ -23,32 +22,63 @@ $asientos=$_SESSION['asientos'];
                 $_SESSION['codigo']=$pass;
             }
         }
-
         require_once('conexion-adodb.php');
         $pelicula=$_SESSION['pelicula'];
         $horario=$_SESSION['horario'];
         $boleto=$_SESSION['boletos'];
 
-
-
-
-
-foreach($_POST as $key=>$value){
-            $swap=$key;
-            $$swap=$value;
+        foreach($_POST as $key=>$value){
+                    $swap=$key;
+                    $$swap=$value;
         }
-        $sql = "insert into compra values (0,'$pelicula','$horario','$boleto','$cod',NOW());";
-        $result = mysqli_query($conn, $sql);
+        $cantidadBoletos=$_SESSION['boletos'];
+        $fecha=$_POST['fecha'];
+        $idcuenta=$_POST['cuenta'];
+        $saldo=$_POST['saldo'];
+        $verificacion=$_POST['verificacion'];
+        $total=$cantidadBoletos*30;
+        $sql2="select * from CuentasBancarias where  Numerotarjeta='$idcuenta' and FechaVen='$fecha' and CodigoVeri='$verificacion'";
+        $result2= mysqli_query($conn, $sql2);
         if ($result == true) {
             foreach ($lista as $valor)
             {
                 $sql1 = "update asientos set src='../img/asientou.png' where NomAsiendo='$valor' and sala='$sala' and horario='$horario'";
                 $result = mysqli_query($conn, $sql1);
+                if($result){
+                    $sql = "insert into compra values (0,'$pelicula','$horario','$boleto','$cod',NOW());";
+                    $result = mysqli_query($conn, $sql);
+                    if($result2){
+                        foreach($_POST as $key=>$value){
+                            $swap=$key;
+                            $$swap=$value;
+                        }
+                        $sql3 = "update CuentasBancarias set saldo=saldo - '$total' where Numerotarjeta='$idcuenta'";
+                        $result = mysqli_query($conn, $sql3);
+                        if ($result == true) {?>
+                            <script type="text/javascript">
+                            window.location="compra.php";
+                            </script>
+                                <?php
+                        } else {
+
+                        }
+                    }else{
+
+                    }
+
+                }
             }
         }
-         else {
+         else {?>
+             <script type="text/javascript">
+                 alert ('kawai :3');
+             </script>
+                 <?php
         }
-        mysqli_close($conn);
+
+
+            mysqli_close($conn);
+
     }
 ?>
 
@@ -128,15 +158,15 @@ foreach($_POST as $key=>$value){
     <div class="form-group"  style="width: 30%; color: white; margin-left: 5%;" align="center">
         <form id="registrarUsuario" name="registrarUsuario" method="post" >
             <label >N&uacute;mero de tarjeta:</label>
-            <input type="text" class="form-control" id="usuario" name="usuario" style="text-align: center; text-transform: uppercase;" maxlength="30" autofocus="true"  required/>
+            <input type="text" class="form-control" id="cuenta" name="cuenta" style="text-align: center; text-transform: uppercase;" maxlength="30" autofocus="true"  required/>
             <br>
 
             <label >Fecha de vencimiento:</label>
-            <input type="text" class="form-control form-inline " id="contrasena" name="contrasena" style="text-align: center;" maxlength="12" required/>
+            <input type="text" class="form-control form-inline " id="fecha" name="fecha" style="text-align: center;" maxlength="12" required/>
             <br>
 
             <label>C&oacute;digo de verificaci&oacute;n:</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" style="text-align: center;" maxlength="50" required />
+            <input type="text" class="form-control" id="verificacion" name="verificacion" style="text-align: center;" maxlength="50" required />
             <br>
 
 <input type="hidden" id="variable" value="<?php echo $asientos?>">

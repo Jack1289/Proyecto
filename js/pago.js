@@ -36,7 +36,7 @@ function pagar(){
                         comprar:''
                     },
                     function(data, status){
-                        window.location="compra.php"
+                        //window.location="compra.php"
                     });
             }else {
             }
