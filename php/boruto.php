@@ -8,7 +8,6 @@
     $db->query("SET CHARACTER SET utf8");
     $sentencia=$db->Execute($sql);
     $pp=$sentencia->fields('nombre');
-$_SESSION['ds']=$sentencia->fields('nombre');;
     //$_SESSION['idPelicula']=0;
 
 ?>

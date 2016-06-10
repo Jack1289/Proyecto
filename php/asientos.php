@@ -22,7 +22,6 @@
         $i=$i+1;
     }
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -201,7 +200,7 @@
 
 </div>
     <div style="float: left; padding-left: 2%;" >
-        <label style="color: white;font-size: large;">Pel&iacute;cula:&nbsp;&nbsp;</label><label style="color: white;"> <?php $pp=$_SESSION['ds']; echo $pp; ?></label><br>
+        <label style="color: white;font-size: large;">Pel&iacute;cula:&nbsp;&nbsp;</label><label style="color: white;"> <?php $pp=$_SESSION['pelicula']; echo $pp; ?></label><br>
         <label style="color: white;font-size: large;">Horario:&nbsp;&nbsp;</label><label style="color: white;"><?php echo $_SESSION['horario']; ?></label><br>
         <img src="<?php echo $_SESSION['poster']; ?>" alt="Boruto" width="180px" style="float: left;position: absolute ">
     </div>
@@ -533,7 +532,6 @@
 </div><br><br><br><br>
 <center>
     <form id="realizarCompra" name="realizarCompra" method="POST">
-
         <button type="submit" id="pagar" name="pagar" class="btn btn-success" onclick="comprar(); return false;" disabled="true"><i class="fa fa-money"></i> Pagar</button>
     </form>
 </center>
