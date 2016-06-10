@@ -1,3 +1,4 @@
+
 var blanco='http://localhost/img/asientonn.png';
 var verde='http://localhost/img/asientov.png';
 var rojo='http://localhost/img/asientou.png';
@@ -20,7 +21,7 @@ function taquito(element){
             }
         }else{
             element.src=verde;
-            var i=0
+            var i=0;
             for(i=0;i<asientos.length;i++)
             {
                 if(asientos[i]==element.name)

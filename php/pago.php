@@ -2,84 +2,18 @@
     session_start();
     $lista=explode(",",$_SESSION['asientos']);
     $sala=$_SESSION['sala'];
-
+echo $_SESSION['asientos'];
     //echo $lista[0];
     //echo $lista[1];
     require_once('../html/footer-comun.html');
     $asientos=$_SESSION['asientos'];
     if(isset($_POST['comprar'])){
-        $chars = "abcdefghijkmnopqrstuvwxyz023456789";
-        srand((double)microtime()*1000000);
-        $i = 0;
-        $pass = '' ;
-        while ($i <= 7) {
-            $num = rand() % 33;
-            $tmp = substr($chars, $num, 1);
-            $pass = $pass . $tmp;
-            $i++;
-            if($i==7){
-                $cod=$pass;
-                $_SESSION['codigo']=$pass;
-            }
-        }
-        require_once('conexion-adodb.php');
-        $pelicula=$_SESSION['pelicula'];
-        $horario=$_SESSION['horario'];
-        $boleto=$_SESSION['boletos'];
-
-        foreach($_POST as $key=>$value){
-                    $swap=$key;
-                    $$swap=$value;
-        }
-        $cantidadBoletos=$_SESSION['boletos'];
-        $fecha=$_POST['fecha'];
-        $idcuenta=$_POST['cuenta'];
-        $saldo=$_POST['saldo'];
-        $verificacion=$_POST['verificacion'];
-        $total=$cantidadBoletos*30;
-        $sql2="select * from CuentasBancarias where  Numerotarjeta='$idcuenta' and FechaVen='$fecha' and CodigoVeri='$verificacion'";
-        $result2= mysqli_query($conn, $sql2);
-        if ($result == true) {
-            foreach ($lista as $valor)
-            {
-                $sql1 = "update asientos set src='../img/asientou.png' where NomAsiendo='$valor' and sala='$sala' and horario='$horario'";
-                $result = mysqli_query($conn, $sql1);
-                if($result){
-                    $sql = "insert into compra values (0,'$pelicula','$horario','$boleto','$cod',NOW());";
-                    $result = mysqli_query($conn, $sql);
-                    if($result2){
-                        foreach($_POST as $key=>$value){
-                            $swap=$key;
-                            $$swap=$value;
-                        }
-                        $sql3 = "update CuentasBancarias set saldo=saldo - '$total' where Numerotarjeta='$idcuenta'";
-                        $result = mysqli_query($conn, $sql3);
-                        if ($result == true) {?>
-                            <script type="text/javascript">
-                            window.location="compra.php";
-                            </script>
-                                <?php
-                        } else {
-
-                        }
-                    }else{
-
-                    }
-
-                }
-            }
-        }
-         else {?>
-             <script type="text/javascript">
-                 alert ('kawai :3');
-             </script>
-                 <?php
-        }
-
-
-            mysqli_close($conn);
-
+        $_SESSION['fecha']=$_POST['fecha'];
+        $_SESSION['cuenta']=$_POST['cuenta'];
+        $_SESSION['verificacion']=$_POST['verificacion'];
+        header ("Location: compra.php");
     }
+
 ?>
 
 
@@ -149,7 +83,7 @@
 
         <label style="font-size: larger; color: white;">Pagar Boleto</label><br><br><br>
         <div style="padding-left: 2%;" >
-            <label style="color: white;font-size: large;">Pel&iacute;cula:&nbsp;&nbsp;</label><label style="color: white;"> <?php echo $_SESSION['pelicula']; ?></label><br>
+            <label style="color: white;font-size: large;">Pel&iacute;cula:&nbsp;&nbsp;</label><label style="color: white;"> <?php echo $_SESSION['ds']; ?></label><br>
             <label style="color: white;font-size: large;">Horario:&nbsp;&nbsp;</label><label style="color: white;"><?php echo $_SESSION['horario']; ?></label><br>
             <label style="color: white;font-size: large;">Boletos:&nbsp;&nbsp;</label><label style="color: white;"><?php echo $_SESSION['boletos']; ?></label><br>
             <label style="color: white;font-size: large;">Asientos:&nbsp;&nbsp;</label><label style="color: white;"><?php echo $_SESSION['asientos']; ?></label><br>
@@ -158,19 +92,19 @@
     <div class="form-group"  style="width: 30%; color: white; margin-left: 5%;" align="center">
         <form id="registrarUsuario" name="registrarUsuario" method="post" >
             <label >N&uacute;mero de tarjeta:</label>
-            <input type="text" class="form-control" id="cuenta" name="cuenta" style="text-align: center; text-transform: uppercase;" maxlength="30" autofocus="true"  required/>
+            <input type="text" class="form-control" id="cuenta" name="cuenta" style="text-align: center; text-transform: uppercase;" maxlength="30" autofocus="true"  required value=""/>
             <br>
 
             <label >Fecha de vencimiento:</label>
-            <input type="text" class="form-control form-inline " id="fecha" name="fecha" style="text-align: center;" maxlength="12" required/>
+            <input type="text" class="form-control form-inline " id="fecha" name="fecha" style="text-align: center;" maxlength="12" required value=""/>
             <br>
 
             <label>C&oacute;digo de verificaci&oacute;n:</label>
-            <input type="text" class="form-control" id="verificacion" name="verificacion" style="text-align: center;" maxlength="50" required />
+            <input type="text" class="form-control" id="verificacion" name="verificacion" style="text-align: center;" maxlength="50" required value="" />
             <br>
 
 <input type="hidden" id="variable" value="<?php echo $asientos?>">
-            <button type="submit" id="comprar" name="comprar" class="btn btn-success" onclick="pagar();return false;"><i class="fa fa-ticket"></i> Comprar</button>
+            <button type="submit" id="comprar" name="comprar" class="btn btn-success" onclick="//pagar();return false;"><i class="fa fa-ticket"></i> Comprar</button>
 
 
         </form>
